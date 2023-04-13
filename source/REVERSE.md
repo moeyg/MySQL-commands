@@ -11,7 +11,8 @@
   1 row in set (0.00 sec)
   ```
   ```sql
-  mysql> SELECT REVERSE(author_fname) FROM books;
+  mysql> SELECT REVERSE(author_fname)
+      -> FROM books;
   +-----------------------+
   | REVERSE(author_fname) |
   +-----------------------+
