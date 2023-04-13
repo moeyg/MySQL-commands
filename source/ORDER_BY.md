@@ -33,7 +33,9 @@
   ```
 
   ```sql
-  mysql> SELECT title, released_year, pages
+  mysql> SELECT title,
+      ->        released_year,
+      ->        pages
       -> FROM books
       -> ORDER BY released_year;
   +-----------------------------------------------------+---------------+-------+
@@ -69,8 +71,7 @@
   ```sql
   mysql> SELECT title
       -> FROM books
-      -> ORDER BY title
-      -> DESC;
+      -> ORDER BY title DESC;
   +-----------------------------------------------------+
   | title                                               |
   +-----------------------------------------------------+
@@ -98,7 +99,9 @@
   ```
 
   ```sql
-  mysql> SELECT title, released_year, pages
+  mysql> SELECT title,
+      ->        released_year,
+      ->        pages
       -> FROM books
       -> ORDER BY released_year;
   +-----------------------------------------------------+---------------+-------+
@@ -131,9 +134,11 @@
 
 - `ORDER BY first, second` : `first` 조건으로 정렬한 뒤, `second` 조건에 따라 정렬
   ```sql
-  mysql> SELECT author_fname, author_lname
+  mysql> SELECT author_fname,
+      ->        author_lname
       -> FROM books
-      -> ORDER BY author_lname, author_fname;
+      -> ORDER BY author_lname,
+      ->          author_fname;
   +--------------+----------------+
   | author_fname | author_lname   |
   +--------------+----------------+

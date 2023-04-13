@@ -5,7 +5,9 @@
   ```sql
   -- DELETE
 
-  mysql> DELETE FROM greenhouse WHERE crops="Strawberry";
+  mysql> DELETE
+      -> FROM greenhouse
+      -> WHERE crops="Strawberry";
   Query OK, 1 row affected (0.00 sec)
 
   -- Result
@@ -29,7 +31,9 @@
   ```sql
   -- DELETE
 
-  mysql> DELETE FROM greenhouse WHERE price<=600;
+  mysql> DELETE
+      -> FROM greenhouse
+      -> WHERE price <= 600;
   Query OK, 4 rows affected (0.00 sec)
 
   -- Result
@@ -47,7 +51,9 @@
   ```sql
   -- DELETE
 
-  mysql> DELETE FROM greenhouse WHERE No=quantity;
+  mysql> DELETE
+      -> FROM greenhouse
+      -> WHERE No = quantity;
   Query OK, 1 row affected (0.00 sec)
 
   -- Result

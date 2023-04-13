@@ -145,7 +145,7 @@
 
 - `TABLE` 삭제
 
-  ```bash
+  ```sql
   DROP TABLE table_name;
   ```
 

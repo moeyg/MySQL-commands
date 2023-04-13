@@ -2,49 +2,46 @@
 
 - `UPPER` : 문자열을 대문자로 치환하기
 
-      ```bash
-      mysql> SELECT UPPER("hello, world!!");
-      +------------------------+
-      | UPPER("hello, world!") |
-      +------------------------+
-      | HELLO, WORLD!!         |
-      +------------------------+
-      1 row in set (0.00 sec)
-      ```
+  ```sql
+    mysql> SELECT UPPER("hello, world!!");
+    +------------------------+
+    | UPPER("hello, world!") |
+    +------------------------+
+    | HELLO, WORLD!!         |
+    +------------------------+
+    1 row in set (0.00 sec)
+  ```
 
-      ```bash
-      mysql> SELECT
-          -> CONCAT
-          -> ("MY FAVORITE BOOK IS ", UPPER(title))
-          -> AS "FAVORITE BOOKS"
-          -> FROM books;
-      +-------------------------------------------------------------------------+
-      | FAVORITE BOOKS                                                          |
-      +-------------------------------------------------------------------------+
-      | MY FAVORITE BOOK IS THE NAMESAKE                                        |
-      | MY FAVORITE BOOK IS NORSE MYTHOLOGY                                     |
-      | MY FAVORITE BOOK IS AMERICAN GODS                                       |
-      | MY FAVORITE BOOK IS INTERPRETER OF MALADIES                             |
-      | MY FAVORITE BOOK IS A HOLOGRAM FOR THE KING: A NOVEL                    |
-      | MY FAVORITE BOOK IS THE CIRCLE                                          |
-      | MY FAVORITE BOOK IS THE AMAZING ADVENTURES OF KAVALIER & CLAY           |
-      | MY FAVORITE BOOK IS JUST KIDS                                           |
-      | MY FAVORITE BOOK IS A HEARTBREAKING WORK OF STAGGERING GENIUS           |
-      | MY FAVORITE BOOK IS CORALINE                                            |
-      | MY FAVORITE BOOK IS WHAT WE TALK ABOUT WHEN WE TALK ABOUT LOVE: STORIES |
-      | MY FAVORITE BOOK IS WHERE I'M CALLING FROM: SELECTED STORIES            |
-      | MY FAVORITE BOOK IS WHITE NOISE                                         |
-      | MY FAVORITE BOOK IS CANNERY ROW                                         |
-      | MY FAVORITE BOOK IS OBLIVION: STORIES                                   |
-      | MY FAVORITE BOOK IS CONSIDER THE LOBSTER                                |
-      +-------------------------------------------------------------------------+
-      16 rows in set (0.00 sec)
-      ```
+  ```sql
+    mysql> SELECT CONCAT("MY FAVORITE BOOK IS ", UPPER(title)) AS "FAVORITE BOOKS"
+        -> FROM books;
+    +-------------------------------------------------------------------------+
+    | FAVORITE BOOKS                                                          |
+    +-------------------------------------------------------------------------+
+    | MY FAVORITE BOOK IS THE NAMESAKE                                        |
+    | MY FAVORITE BOOK IS NORSE MYTHOLOGY                                     |
+    | MY FAVORITE BOOK IS AMERICAN GODS                                       |
+    | MY FAVORITE BOOK IS INTERPRETER OF MALADIES                             |
+    | MY FAVORITE BOOK IS A HOLOGRAM FOR THE KING: A NOVEL                    |
+    | MY FAVORITE BOOK IS THE CIRCLE                                          |
+    | MY FAVORITE BOOK IS THE AMAZING ADVENTURES OF KAVALIER & CLAY           |
+    | MY FAVORITE BOOK IS JUST KIDS                                           |
+    | MY FAVORITE BOOK IS A HEARTBREAKING WORK OF STAGGERING GENIUS           |
+    | MY FAVORITE BOOK IS CORALINE                                            |
+    | MY FAVORITE BOOK IS WHAT WE TALK ABOUT WHEN WE TALK ABOUT LOVE: STORIES |
+    | MY FAVORITE BOOK IS WHERE I'M CALLING FROM: SELECTED STORIES            |
+    | MY FAVORITE BOOK IS WHITE NOISE                                         |
+    | MY FAVORITE BOOK IS CANNERY ROW                                         |
+    | MY FAVORITE BOOK IS OBLIVION: STORIES                                   |
+    | MY FAVORITE BOOK IS CONSIDER THE LOBSTER                                |
+    +-------------------------------------------------------------------------+
+    16 rows in set (0.00 sec)
+  ```
 
   <br>
 
 - `LOWER` : 문자열을 소문자로 치환하기
-  ```bash
+  ```sql
   mysql> SELECT LOWER("HELLO, WORLD!");
   +------------------------+
   | LOWER("HELLO, WORLD!") |
@@ -53,11 +50,8 @@
   +------------------------+
   1 row in set (0.00 sec)
   ```
-  ```bash
-  mysql> SELECT
-      -> CONCAT
-      -> ("my favorite book is ", LOWER(title))
-      -> AS "favorite books"
+  ```sql
+  mysql> SELECT CONCAT("my favorite book is ", LOWER(title)) AS "favorite books"
       -> FROM books;
   +-------------------------------------------------------------------------+
   | favorite books                                                          |

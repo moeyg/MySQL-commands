@@ -7,7 +7,7 @@
   ```
 
   ```sql
-  mysql> INSERT INTO soap (crops, quantity)
+  mysql> INSERT INTO greenhouse (crops, quantity)
       -> VALUES ("Carrot", 15);
   Query OK, 1 row affected (0.01 sec)
   ```
@@ -17,7 +17,10 @@
 - 다중 `INSERT`
 
   ```sql
-  INSERT INTO table_name (column_name) VALUES (data_type), (data_type), (data_type);
+  INSERT INTO table_name (column_name)
+  VALUES (data_type),
+         (data_type),
+         (data_type);
   ```
 
   ```sql

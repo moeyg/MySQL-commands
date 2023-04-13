@@ -20,13 +20,14 @@
 <br>
 
 - `LIMIT row1, row2` : row1 부터 row2 까지 조회
+
   ```sql
   -- LIMIT에서 첫 번째 row는 0부터 시작한다.
 
-  mysql> SELECT title, released_year
+  mysql> SELECT title,
+      ->        released_year
       -> FROM books
-      -> ORDER BY released_year
-      -> DESC
+      -> ORDER BY released_year DESC
       -> LIMIT 0, 5;
   +----------------------------------+---------------+
   | title                            | released_year |
@@ -39,13 +40,14 @@
   +----------------------------------+---------------+
   5 rows in set (0.00 sec)
   ```
+
   ```sql
   -- 따라서 LIMIT 1, 3은 두 번째 행부터 네 번째 행까지 조회한다.
 
-  mysql> SELECT title, released_year
+  mysql> SELECT title,
+      ->        released_year
       -> FROM books
-      -> ORDER BY released_year
-      -> DESC
+      -> ORDER BY released_year DESC
       -> LIMIT 1, 3;
   +-----------------+---------------+
   | title           | released_year |

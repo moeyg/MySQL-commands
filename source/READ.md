@@ -59,7 +59,8 @@
 
 - `SELECT * FROM … WHERE …` : 테이블에서 조건(`WHERE`)에 맞는 `ROW`만 보기
   ```sql
-  mysql> SELECT * FROM greenhouse WHERE price=600;
+  mysql> SELECT * FROM greenhouse
+      -> WHERE price=600;
   +----+-------------+----------+-------+-----------+
   | No | crops       | quantity | price | type      |
   +----+-------------+----------+-------+-----------+
@@ -69,7 +70,9 @@
   2 rows in set (0.01 sec)
   ```
   ```sql
-  mysql> SELECT crops, quantity FROM greenhouse WHERE type="Vegetable";
+  mysql> SELECT crops, quantity
+      -> FROM greenhouse
+      -> WHERE type="Vegetable";
   +------------+----------+
   | crops      | quantity |
   +------------+----------+
@@ -103,7 +106,9 @@
 
   -- Expression using AS
 
-  mysql> SELECT crops, quantity AS "qty" FROM greenhouse;
+  mysql> SELECT crops,
+      ->        quantity AS "qty"
+      -> FROM greenhouse;
   +-------------+------+
   | crops       | qty  |
   +-------------+------+
@@ -119,7 +124,9 @@
   ```
 
   ```sql
-  mysql> SELECT No, crops, quantity FROM greenhouse WHERE No=quantity;
+  mysql> SELECT No, crops, quantity
+      -> FROM greenhouse
+      -> WHERE No=quantity;
   +----+-------------+----------+
   | No | crops       | quantity |
   +----+-------------+----------+

@@ -1,7 +1,7 @@
 # REVERSE
 
 - `REVERSE` : 문자열 반전하기
-  ```bash
+  ```sql
   mysql> SELECT REVERSE("Hello, World!");
   +--------------------------+
   | REVERSE("Hello, World!") |
@@ -10,7 +10,7 @@
   +--------------------------+
   1 row in set (0.00 sec)
   ```
-  ```bash
+  ```sql
   mysql> SELECT REVERSE(author_fname) FROM books;
   +-----------------------+
   | REVERSE(author_fname) |
@@ -38,11 +38,8 @@
 <br>
 
 - `CONCAT` + `REVERSE` Example
-  ```bash
-  mysql> SELECT
-      -> CONCAT
-      -> (author_fname, REVERSE(author_fname))
-      -> AS "weird name"
+  ```sql
+  mysql> SELECT CONCAT(author_fname, REVERSE(author_fname)) AS "weird name"
       -> FROM books;
   +----------------+
   | weird name     |

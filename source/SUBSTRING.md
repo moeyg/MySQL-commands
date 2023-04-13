@@ -35,8 +35,7 @@
   ```
 
   ```sql
-  mysql> SELECT
-      -> SUBSTRING(title, 1, 10)
+  mysql> SELECT SUBSTRING(title, 1, 10)
       -> FROM books;
   +-------------------------+
   | SUBSTRING(title, 1, 10) |
@@ -64,9 +63,7 @@
   ```sql
   -- Use AS
 
-  mysql> SELECT
-      -> SUBSTRING(title, 1, 10)
-      -> AS "short title"
+  mysql> SELECT SUBSTRING(title, 1, 10) AS "short title"
       -> FROM books;
   +-------------+
   | short title |
@@ -95,10 +92,7 @@
 
 - `CONCAT` + `SUBSTRING` Example
   ```sql
-  mysql> SELECT
-      -> CONCAT
-      -> (SUBSTRING(title, 1, 10), " ...")
-      -> AS "short title"
+  mysql> SELECT CONCAT(SUBSTRING(title, 1, 10), " ...") AS "short title"
       -> FROM books;
   +----------------+
   | short title    |

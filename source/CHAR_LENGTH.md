@@ -1,7 +1,7 @@
 # CHAR_LENGTH
 
 - `CHAR_LENGTH` : 문자열의 길이 구하기
-  ```bash
+  ```sql
   mysql> SELECT CHAR_LENGTH("Hello, World!");
   +------------------------------+
   | CHAR_LENGTH("Hello, World!") |
@@ -10,11 +10,9 @@
   +------------------------------+
   1 row in set (0.03 sec)
   ```
-  ```bash
-  mysql> SELECT
-      -> author_lname,
-      -> CHAR_LENGTH(author_lname)
-      -> AS "length"
+  ```sql
+  mysql> SELECT author_lname,
+      ->        CHAR_LENGTH(author_lname) AS "length"
       -> FROM books;
   +----------------+--------+
   | author_lname   | length |
@@ -42,11 +40,10 @@
 <br>
 
 - `CONCAT` + `CHAR_LENGTH` Example
-  ```bash
+  ```sql
   mysql> SELECT
-      -> CONCAT
-      -> (author_fname, " is ", CHAR_LENGTH(author_fname)," characters long")
-      -> AS "author"
+      ->    CONCAT(author_fname, " is ", CHAR_LENGTH(author_fname)," characters long")
+      ->    AS "author"
       -> FROM books;
   +------------------------------+
   | author                       |

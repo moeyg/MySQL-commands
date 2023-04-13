@@ -63,8 +63,8 @@
 
   ```sql
   mysql> SELECT
-      -> DISTINCT
-      -> author_lname, author_fname
+      -> DISTINCT author_lname,
+      ->          author_fname
       -> FROM books;
   +----------------+--------------+
   | author_lname   | author_fname |
@@ -91,8 +91,8 @@
   ```sql
   mysql> SELECT
       -> DISTINCT
-      -> CONCAT(author_lname, " ", author_fname)
-      -> AS "author"
+      ->     CONCAT(author_lname, " ", author_fname)
+      ->     AS "author"
       -> FROM books;
   +----------------------+
   | author               |

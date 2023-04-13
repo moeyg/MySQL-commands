@@ -20,10 +20,8 @@
   ```
 
   ```sql
-  mysql> SELECT
-      -> title,
-      -> CONCAT(author_fname, ", ", author_lname)
-      -> AS "author"
+  mysql> SELECT title,
+      ->        CONCAT(author_fname, ", ", author_lname) AS "author"
       -> FROM books
       -> WHERE author_fname
       -> LIKE "%da%";
@@ -42,10 +40,8 @@
   ```
 
   ```sql
-  mysql> SELECT
-      -> title,
-      -> CONCAT(author_fname, ", ", author_lname)
-      -> AS "author"
+  mysql> SELECT title,
+      ->        CONCAT(author_fname, ", ", author_lname) AS "author"
       -> FROM books
       -> WHERE author_fname
       -> LIKE "da%";

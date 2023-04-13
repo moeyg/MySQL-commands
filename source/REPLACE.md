@@ -22,8 +22,9 @@
   1 row in set (0.00 sec)
   ```
 
-  ```bash
-  mysql> SELECT REPLACE(title, "e", "@") FROM books;
+  ```sql
+  mysql> SELECT REPLACE(title, "e", "@")
+      -> FROM books;
   +-----------------------------------------------------+
   | REPLACE(title, "e", "@")                            |
   +-----------------------------------------------------+
@@ -50,11 +51,10 @@
 <br>
 
 - `SUBSTRING` + `REPLACE` Example
-  ```bash
+  ```sql
   mysql> SELECT
-      -> SUBSTRING
-      -> (REPLACE(title, "e", "@"), 1, 10)
-      -> AS "title"
+      -> SUBSTRING(
+      ->     REPLACE(title, "e", "@"), 1, 10) AS "title"
       -> FROM books;
   +------------+
   | title      |
