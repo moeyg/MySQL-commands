@@ -4,7 +4,9 @@
     <img src="https://labs.mysql.com/common/logos/mysql-logo.svg" alt="MySQL Logo" width="250">
 </figure>
 
-## Commands list
+<br>
+
+# Commands list
 
 • [DATABASE & TABLES](https://github.com/moeyg/MySQL/blob/main/source/DATABASE_TABLES.md)
 <br>
@@ -14,7 +16,10 @@
 <br>
 • [PRIMARY KEY](https://github.com/moeyg/MySQL/blob/main/source/PRIMARY_KEY.md)
 <br>
-• [CRUD](https://github.com/moeyg/MySQL/blob/main/source/CRUD.md)
+<br>
+• CRUD Commands<br>
+　- [CRUD](https://github.com/moeyg/MySQL/blob/main/source/CRUD.md)
+<br>
 <br>
 • String functions <br>
 　- [CONCAT](https://github.com/moeyg/MySQL/blob/main/source/CONCAT.md) <br>
@@ -24,8 +29,13 @@
 　- [CHAR_LENGTH](https://github.com/moeyg/MySQL/blob/main/source/CHAR_LENGTH.md)<br>
 　- [UPPER & LOWER](https://github.com/moeyg/MySQL/blob/main/source/UPPER_LOWER.md)
 <br>
+<br>
 • Refining operator <br>
 　- [DISTINCT](https://github.com/moeyg/MySQL/blob/main/source/DISTINCT.md) <br>
 　- [ORDER BY](https://github.com/moeyg/MySQL/blob/main/source/ORDER_BY.md) <br>
 　- [LIMIT](https://github.com/moeyg/MySQL/blob/main/source/LIMIT.md) <br>
 　- [LIKE](https://github.com/moeyg/MySQL/blob/main/source/LIKE.md)
+<br>
+<br>
+• Aggregate function <br>
+　-
