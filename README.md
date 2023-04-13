@@ -18,7 +18,10 @@
 <br>
 <br>
 • CRUD Commands<br>
-　- [CRUD](https://github.com/moeyg/MySQL/blob/main/source/CRUD.md)
+　- [CREATE](https://github.com/moeyg/MySQL/blob/main/source/CREATE.md)<br>
+　- [READ](https://github.com/moeyg/MySQL/blob/main/source/READ.md)<br>
+　- [UPDATE](https://github.com/moeyg/MySQL/blob/main/source/UPDATE.md)<br>
+　- [DELETE](https://github.com/moeyg/MySQL/blob/main/source/DELETE.md)<br>
 <br>
 <br>
 • String functions <br>
