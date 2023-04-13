@@ -1,7 +1,8 @@
 # MySQL
 
 <figure>
-    <img src="https://i.namu.wiki/i/0CGVLfPSyw3qeXjPgamziKR12AodjYTMNJk_p0WOgjZ2WAjxF0IUR0OYT7ddnrVSEWW4jAUxkgSWiRvOEjgCVm171E2XzGGdriMji4KIpmsCQeaX-VhdhmaQZ6hhnv11Ks4VqBTgaokbRFtbxi8vEw.svg" alt="MySQL Logo" width="250">
+    <img src="https://labs.mysql.com/common/logos/mysql-logo.svg
+" alt="MySQL Logo" width="250">
 </figure>
 
 ## Commands list
