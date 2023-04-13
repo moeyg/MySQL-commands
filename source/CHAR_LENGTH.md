@@ -42,8 +42,7 @@
 - `CONCAT` + `CHAR_LENGTH` Example
   ```sql
   mysql> SELECT
-      ->    CONCAT(author_fname, " is ", CHAR_LENGTH(author_fname)," characters long")
-      ->    AS "author"
+      ->    CONCAT(author_fname, " is ", CHAR_LENGTH(author_fname)," characters long") AS "author"
       -> FROM books;
   +------------------------------+
   | author                       |
