@@ -61,6 +61,8 @@
   1 row in set (0.00 sec)
   ```
 
+<br>
+
 - `DELETE TABLE` : 테이블 삭제
 
   ```sql

@@ -12,6 +12,9 @@
       -> );
   Query OK, 0 rows affected (0.02 sec)
   ```
+
+<br>
+
 - `INSERT INTO … VALUES …` : 테이블에 데이터 입력
   ```sql
   mysql> INSERT INTO greenhouse (crops, quantity, price, type)

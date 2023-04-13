@@ -21,6 +21,8 @@
   -- SELECT * FROM breadTBL; : Get datas of all columns from breadTBL
   ```
 
+  <br>
+
 - `SELECT … FROM …` : 테이블의 특정 `COLUMN`만 내용 보기
   ```sql
   mysql> SELECT crops FROM greenhouse;
@@ -52,6 +54,9 @@
   +-------------+-------+
   7 rows in set (0.00 sec)
   ```
+
+<br>
+
 - `SELECT * FROM … WHERE …` : 테이블에서 조건(`WHERE`)에 맞는 `ROW`만 보기
   ```sql
   mysql> SELECT * FROM greenhouse WHERE price=600;
@@ -74,6 +79,9 @@
   +------------+----------+
   3 rows in set (0.00 sec)
   ```
+
+<br>
+
 - `AS` : `COLUMN` 별칭 등록하기
 
   ```sql
