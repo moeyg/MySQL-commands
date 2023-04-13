@@ -2,60 +2,60 @@
 
 - `DISTINCT` : 중복 문자열 제거 연산자
 
-```sql
--- NOT USE DISTINCT
+  ```sql
+  -- NOT USE DISTINCT
 
-mysql> SELECT author_lname
-    -> FROM books;
-+----------------+
-| author_lname   |
-+----------------+
-| Lahiri         |
-| Gaiman         |
-| Gaiman         |
-| Lahiri         |
-| Eggers         |
-| Eggers         |
-| Chabon         |
-| Smith          |
-| Eggers         |
-| Gaiman         |
-| Carver         |
-| Carver         |
-| DeLillo        |
-| Steinbeck      |
-| Foster Wallace |
-| Foster Wallace |
-| Harris         |
-| Harris         |
-| Saunders       |
-+----------------+
-19 rows in set (0.00 sec)
-```
+  mysql> SELECT author_lname
+      -> FROM books;
+  +----------------+
+  | author_lname   |
+  +----------------+
+  | Lahiri         |
+  | Gaiman         |
+  | Gaiman         |
+  | Lahiri         |
+  | Eggers         |
+  | Eggers         |
+  | Chabon         |
+  | Smith          |
+  | Eggers         |
+  | Gaiman         |
+  | Carver         |
+  | Carver         |
+  | DeLillo        |
+  | Steinbeck      |
+  | Foster Wallace |
+  | Foster Wallace |
+  | Harris         |
+  | Harris         |
+  | Saunders       |
+  +----------------+
+  19 rows in set (0.00 sec)
+  ```
 
-```sql
--- USE DISTINCT
+  ```sql
+  -- USE DISTINCT
 
-mysql> SELECT
-    -> DISTINCT author_lname
-    -> FROM books;
-+----------------+
-| author_lname   |
-+----------------+
-| Lahiri         |
-| Gaiman         |
-| Eggers         |
-| Chabon         |
-| Smith          |
-| Carver         |
-| DeLillo        |
-| Steinbeck      |
-| Foster Wallace |
-| Harris         |
-| Saunders       |
-+----------------+
-11 rows in set (0.01 sec)
-```
+  mysql> SELECT
+      -> DISTINCT author_lname
+      -> FROM books;
+  +----------------+
+  | author_lname   |
+  +----------------+
+  | Lahiri         |
+  | Gaiman         |
+  | Eggers         |
+  | Chabon         |
+  | Smith          |
+  | Carver         |
+  | DeLillo        |
+  | Steinbeck      |
+  | Foster Wallace |
+  | Harris         |
+  | Saunders       |
+  +----------------+
+  11 rows in set (0.01 sec)
+  ```
 
 <br>
 
