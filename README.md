@@ -1,8 +1,8 @@
 # MySQL
 
-MySQL command
+MySQL commands.
 
-## Command list
+## Commands list
 
 • [DATABASE & TABLES](https://github.com/moeyg/MySQL/blob/main/source/DATABASE_TABLES.md)
 <br>
