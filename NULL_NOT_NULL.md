@@ -60,6 +60,8 @@
   6 rows in set (0.00 sec)
   ```
 
+<br>
+
 - `NOT NULL`
 
   ```sql
@@ -95,6 +97,7 @@
   ```
 
 - `DEFAULT`
+
   ```sql
   -- Setting DEFAULT
 
@@ -118,6 +121,7 @@
 
   -- Default unknown, 0
   ```
+
   ```sql
   -- quantity Default value
 
@@ -149,7 +153,9 @@
   +---------+----------+
   3 rows in set (0.00 sec)
   ```
+
 - `NOT NULL` & `DEFAULT`
+
   ```sql
   -- Setting NOT NULL & DEFAULT
 
@@ -171,6 +177,7 @@
   +----------+--------------+------+-----+---------+-------+
   2 rows in set (0.02 sec)
   ```
+
   ```sql
   -- If value is NULL
 
