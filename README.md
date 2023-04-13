@@ -1,6 +1,6 @@
 # MySQL
 
-MySQL command 입니다.
+MySQL command
 
 ## LIST
 
