@@ -36,7 +36,7 @@
   -- Result
 
   mysql> SELECT * FROM greenhouse
-      -> WHERE crops="Chestnut";
+      -> WHERE crops = "Chestnut";
   +----+----------+----------+-------+------+
   | No | crops    | quantity | price | type |
   +----+----------+----------+-------+------+
@@ -49,15 +49,15 @@
   -- UPDATE two crops type value
 
   mysql> UPDATE greenhouse
-      -> SET price=550
-      -> WHERE type="Seed";
+      -> SET price = 550
+      -> WHERE type = "Seed";
   Query OK, 2 rows affected (0.00 sec)
   Rows matched: 2  Changed: 2  Warnings: 0
 
   -- Result
 
   mysql> SELECT * FROM greenhouse
-      -> WHERE type="Seed";
+      -> WHERE type = "Seed";
   +----+----------+----------+-------+------+
   | No | crops    | quantity | price | type |
   +----+----------+----------+-------+------+
