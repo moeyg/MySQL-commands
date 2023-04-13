@@ -92,7 +92,7 @@
   mysql> SELECT
       -> DISTINCT
       -> CONCAT(author_lname, " ", author_fname)
-      -> AS author
+      -> AS "author"
       -> FROM books;
   +----------------------+
   | author               |

@@ -57,10 +57,10 @@
   mysql> SELECT
       -> CONCAT
       -> ("my favorite book is ", LOWER(title))
-      -> AS "favorite boosk"
+      -> AS "favorite books"
       -> FROM books;
   +-------------------------------------------------------------------------+
-  | favorite boosk                                                          |
+  | favorite books                                                          |
   +-------------------------------------------------------------------------+
   | my favorite book is the namesake                                        |
   | my favorite book is norse mythology                                     |

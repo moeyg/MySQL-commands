@@ -103,7 +103,7 @@
 
   -- Expression using AS
 
-  mysql> SELECT crops, quantity AS qty FROM greenhouse;
+  mysql> SELECT crops, quantity AS "qty" FROM greenhouse;
   +-------------+------+
   | crops       | qty  |
   +-------------+------+
