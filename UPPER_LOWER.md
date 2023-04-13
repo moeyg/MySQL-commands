@@ -41,6 +41,8 @@ mysql> SELECT
 16 rows in set (0.00 sec)
 ```
 
+<br>
+
 - `LOWER` : 문자열을 소문자로 치환하기
 
 ```bash
