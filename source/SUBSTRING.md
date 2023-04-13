@@ -1,12 +1,13 @@
 # SUBSTRING
 
 - `SUBSTRING` : 문자열을 인덱스에 따라 자르기
+
   ```sql
   -- Two index
 
-  mysql> SELECT SUBSTRING('Hello, World!', 1, 6);
+  mysql> SELECT SUBSTRING("Hello, World!", 1, 6);
   +----------------------------------+
-  | SUBSTRING('Hello, World!', 1, 6) |
+  | SUBSTRING("Hello, World!", 1, 6) |
   +----------------------------------+
   | Hello,                           |
   +----------------------------------+
@@ -14,9 +15,9 @@
 
   -- One index
 
-  mysql> SELECT SUBSTRING('Hello, World!', 7);
+  mysql> SELECT SUBSTRING("Hello, World!", 7);
   +-------------------------------+
-  | SUBSTRING('Hello, World!', 7) |
+  | SUBSTRING("Hello, World!", 7) |
   +-------------------------------+
   |  World!                       |
   +-------------------------------+
@@ -24,14 +25,15 @@
 
   -- Negative index
 
-  mysql> SELECT SUBSTRING('Hello, World!', -5);
+  mysql> SELECT SUBSTRING("Hello, World!", -5);
   +--------------------------------+
-  | SUBSTRING('Hello, World!', -5) |
+  | SUBSTRING("Hello, World!", -5) |
   +--------------------------------+
   | orld!                          |
   +--------------------------------+
   1 row in set (0.00 sec)
   ```
+
   ```sql
   mysql> SELECT
       -> SUBSTRING(title, 1, 10)
@@ -58,12 +60,13 @@
   +-------------------------+
   16 rows in set (0.00 sec)
   ```
+
   ```sql
   -- Use AS
 
   mysql> SELECT
       -> SUBSTRING(title, 1, 10)
-      -> AS 'short title'
+      -> AS "short title"
       -> FROM books;
   +-------------+
   | short title |
@@ -94,8 +97,8 @@
   ```sql
   mysql> SELECT
       -> CONCAT
-      -> (SUBSTRING(title, 1, 10), ' ...')
-      -> AS 'short title'
+      -> (SUBSTRING(title, 1, 10), " ...")
+      -> AS "short title"
       -> FROM books;
   +----------------+
   | short title    |

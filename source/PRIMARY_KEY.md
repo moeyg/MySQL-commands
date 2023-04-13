@@ -40,8 +40,8 @@
   -- Insert PRIMARY KEY
 
   mysql> INSERT INTO greenhouse5 (No, crops, quantity)
-      -> VALUES (1, 'Chestnut', 20),
-      ->        (2, 'Walnut', 20);
+      -> VALUES (1, "Chestnut", 20),
+      ->        (2, "Walnut", 20);
   Query OK, 2 rows affected (0.01 sec)
   Records: 2  Duplicates: 0  Warnings: 0
 
@@ -65,8 +65,8 @@
   -- If assigning a key value that already exists.
 
   mysql> INSERT INTO greenhouse5 (No, crops, quantity)
-      -> VALUES (1, 'Garlic', 30);
-  ERROR 1062 (23000): Duplicate entry '1' for key 'greenhouse5.PRIMARY'
+      -> VALUES (1, "Garlic", 30);
+  ERROR 1062 (23000): Duplicate entry "1" for key "greenhouse5.PRIMARY"
   ```
 
 <br>
@@ -101,9 +101,9 @@
   -- Insert datas
 
   mysql> INSERT INTO greenhouse6 (crops, quantity)
-      -> VALUES ('Radish', 3),
-      ->        ('Pepper', 2),
-      ->        ('Sweetpotato', 3);
+      -> VALUES ("Radish", 3),
+      ->        ("Pepper", 2),
+      ->        ("Sweetpotato", 3);
   Query OK, 3 rows affected (0.00 sec)
   Records: 3  Duplicates: 0  Warnings: 0
 

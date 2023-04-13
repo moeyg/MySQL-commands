@@ -1,10 +1,11 @@
 # REPLACE
 
 - `REPLACE` : 첫 번째 인자의 값에서 두 번째 인자를 세 번째 인자의 값으로 치환하기
+
   ```sql
-  mysql> SELECT REPLACE('Hello, World!', 'Hello', '%^&$#');
+  mysql> SELECT REPLACE("Hello, World!", "Hello", "%^&$#");
   +--------------------------------------------+
-  | REPLACE('Hello, World!', 'Hello', '%^&$#') |
+  | REPLACE("Hello, World!", "Hello", "%^&$#") |
   +--------------------------------------------+
   | %^&$#, World!                              |
   +--------------------------------------------+
@@ -12,18 +13,19 @@
 
   -- Case sensitive
 
-  mysql> SELECT REPLACE('Hello, World!', 'o', '0');
+  mysql> SELECT REPLACE("Hello, World!", "o", "0");
   +------------------------------------+
-  | REPLACE('Hello, World!', 'o', '0') |
+  | REPLACE("Hello, World!", "o", "0") |
   +------------------------------------+
   | Hell0, W0rld!                      |
   +------------------------------------+
   1 row in set (0.00 sec)
   ```
+
   ```bash
-  mysql> SELECT REPLACE(title, 'e', '@') FROM books;
+  mysql> SELECT REPLACE(title, "e", "@") FROM books;
   +-----------------------------------------------------+
-  | REPLACE(title, 'e', '@')                            |
+  | REPLACE(title, "e", "@")                            |
   +-----------------------------------------------------+
   | Th@ Nam@sak@                                        |
   | Nors@ Mythology                                     |
@@ -51,8 +53,8 @@
   ```bash
   mysql> SELECT
       -> SUBSTRING
-      -> (REPLACE(title, 'e', '@'), 1, 10)
-      -> AS 'title'
+      -> (REPLACE(title, "e", "@"), 1, 10)
+      -> AS "title"
       -> FROM books;
   +------------+
   | title      |

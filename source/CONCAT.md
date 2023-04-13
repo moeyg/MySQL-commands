@@ -50,10 +50,10 @@
   -- Use CONCAT function
 
   mysql> SELECT
-      -> CONCAT(author_fname, ' ', author_lname)
+      -> CONCAT(author_fname, " ", author_lname)
       -> FROM books;
   +-----------------------------------------+
-  | CONCAT(author_fname, ' ', author_lname) |
+  | CONCAT(author_fname, " ", author_lname) |
   +-----------------------------------------+
   | Jhumpa Lahiri                           |
   | Neil Gaiman                             |
@@ -83,8 +83,8 @@
   -- Use AS
 
   mysql> SELECT
-      -> CONCAT(author_fname, ' ', author_lname)
-      -> AS 'full name'
+      -> CONCAT(author_fname, " ", author_lname)
+      -> AS "full name"
       -> FROM books;
   +----------------------+
   | full name            |
@@ -114,9 +114,9 @@
 - `CONCAT` Example
   ```sql
   mysql> SELECT
-      -> author_fname AS 'first name',
-      -> author_lname AS 'last name',
-      -> CONCAT(author_fname, ', ', author_lname) AS 'full name'
+      -> author_fname AS "first name",
+      -> author_lname AS "last name",
+      -> CONCAT(author_fname, ", ", author_lname) AS "full name"
       -> FROM books;
   +------------+----------------+-----------------------+
   | first name | last name      | full name             |
@@ -146,8 +146,8 @@
 - `CONCAT_WS` : 처음 인자를 구분자로 하여, 나머지 인자들을 결합
   ```sql
   mysql> SELECT
-      -> CONCAT_WS(' - ', title, author_fname, author_lname)
-      -> AS 'title - author name'
+      -> CONCAT_WS(" - ", title, author_fname, author_lname)
+      -> AS "title - author name"
       -> FROM books;
   +------------------------------------------------------------------------+
   | title - author name                                                    |

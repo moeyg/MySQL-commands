@@ -8,7 +8,7 @@
 
   ```sql
   mysql> INSERT INTO soap (crops, quantity)
-      -> VALUES ('Carrot', 15);
+      -> VALUES ("Carrot", 15);
   Query OK, 1 row affected (0.01 sec)
   ```
 
@@ -22,9 +22,9 @@
 
   ```sql
   mysql> INSERT INTO greenhouse (crops, quantity)
-      -> VALUES ('Strawberry', 12),
-      ->        ('Potato', 23),
-      ->        ('Pumpkin', 8);
+      -> VALUES ("Strawberry", 12),
+      ->        ("Potato", 23),
+      ->        ("Pumpkin", 8);
   Query OK, 3 rows affected (0.00 sec)
   Records: 3  Duplicates: 0  Warnings: 0
   ```

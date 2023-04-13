@@ -14,7 +14,7 @@
   mysql> SELECT
       -> author_lname,
       -> CHAR_LENGTH(author_lname)
-      -> AS 'length'
+      -> AS "length"
       -> FROM books;
   +----------------+--------+
   | author_lname   | length |
@@ -45,8 +45,8 @@
   ```bash
   mysql> SELECT
       -> CONCAT
-      -> (author_fname, ' is ', CHAR_LENGTH(author_fname),' characters long')
-      -> AS 'author'
+      -> (author_fname, " is ", CHAR_LENGTH(author_fname)," characters long")
+      -> AS "author"
       -> FROM books;
   +------------------------------+
   | author                       |

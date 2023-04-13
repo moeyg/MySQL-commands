@@ -69,7 +69,7 @@
   2 rows in set (0.01 sec)
   ```
   ```sql
-  mysql> SELECT crops, quantity FROM greenhouse WHERE type='Vegetable';
+  mysql> SELECT crops, quantity FROM greenhouse WHERE type="Vegetable";
   +------------+----------+
   | crops      | quantity |
   +------------+----------+

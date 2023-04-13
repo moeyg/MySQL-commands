@@ -2,9 +2,9 @@
 
 - `REVERSE` : 문자열 반전하기
   ```bash
-  mysql> SELECT REVERSE('Hello, World!');
+  mysql> SELECT REVERSE("Hello, World!");
   +--------------------------+
-  | REVERSE('Hello, World!') |
+  | REVERSE("Hello, World!") |
   +--------------------------+
   | !dlroW ,olleH            |
   +--------------------------+
@@ -42,7 +42,7 @@
   mysql> SELECT
       -> CONCAT
       -> (author_fname, REVERSE(author_fname))
-      -> AS 'weird name'
+      -> AS "weird name"
       -> FROM books;
   +----------------+
   | weird name     |

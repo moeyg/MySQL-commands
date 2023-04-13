@@ -19,7 +19,7 @@
   -- quantity is empty
 
   mysql> INSERT INTO greenhouse (crops)
-      -> VALUES ('Corn');
+      -> VALUES ("Corn");
   Query OK, 1 row affected (0.00 sec)
 
   -- Result
@@ -92,7 +92,7 @@
   -- If NOT NULL, value is empty
 
   mysql> INSERT INTO greenhouse2 (crops)
-      -> VALUES ('Tomato');
+      -> VALUES ("Tomato");
   ERROR 1364 (HY000): Field 'quantity' doesn't have a default value
   ```
 
@@ -105,7 +105,7 @@
 
   mysql> CREATE TABLE greenhouse3
       -> (
-      ->     crops VARCHAR(255) DEFAULT 'unknown',
+      ->     crops VARCHAR(255) DEFAULT "unknown",
       ->     quantity INT DEFAULT 0
       -> );
   Query OK, 0 rows affected (0.01 sec)
@@ -128,7 +128,7 @@
   -- quantity Default value
 
   mysql> INSERT INTO greenhouse3 (crops)
-      -> VALUES ('Apple');
+      -> VALUES ("Apple");
   Query OK, 1 row affected (0.03 sec)
 
   -- crops Default value
@@ -165,7 +165,7 @@
 
   mysql> CREATE TABLE greenhouse4
       -> (
-      ->     crops VARCHAR(255) NOT NULL DEFAULT 'unknown',
+      ->     crops VARCHAR(255) NOT NULL DEFAULT "unknown",
       ->     quantity INT NOT NULL DEFAULT 0
       -> );
   Query OK, 0 rows affected (0.04 sec)
@@ -186,13 +186,13 @@
   -- If value is NULL
 
   mysql> INSERT INTO greenhouse4 (crops, quantity)
-      -> VALUES ('Acorn', NULL);
-  ERROR 1048 (23000): Column 'quantity' cannot be null
+      -> VALUES ("Acorn", NULL);
+  ERROR 1048 (23000): Column "quantity" cannot be null
 
   -- If value is empty
 
   mysql> INSERT INTO greenhouse4 (crops)
-      -> VALUES ('Acorn');
+      -> VALUES ("Acorn");
   Query OK, 1 row affected (0.00 sec)
 
   -- Result
