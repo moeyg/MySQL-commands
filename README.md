@@ -2,7 +2,7 @@
 
 MySQL command
 
-## LIST
+## Command list
 
 • [DATABASE & TABLES](https://github.com/moeyg/MySQL/blob/main/source/DATABASE_TABLES.md)
 <br>
