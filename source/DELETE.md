@@ -7,7 +7,7 @@
 
   mysql> DELETE
       -> FROM greenhouse
-      -> WHERE crops="Strawberry";
+      -> WHERE crops = "Strawberry";
   Query OK, 1 row affected (0.00 sec)
 
   -- Result
