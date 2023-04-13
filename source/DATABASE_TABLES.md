@@ -18,10 +18,15 @@
   +--------------------+
   4 rows in set (0.00 sec)
   ```
+
+<br>
+
 - `DATABASE` 생성
+
   ```sql
   CREATE DATABASE database_name;
   ```
+
   ```sql
   mysql> CREATE DATABASE FARM;
   Query OK, 1 row affected (0.00 sec)
@@ -38,6 +43,7 @@
   +--------------------+
   5 rows in set (0.01 sec)
   ```
+
 - `DATABASE` 사용
 
   ```sql
@@ -64,6 +70,8 @@
   +------------+
   1 row in set (0.00 sec)
   ```
+
+<br>
 
 - `DATABASE` 삭제
   ```sql
@@ -98,6 +106,8 @@
   Query OK, 0 rows affected (0.01 sec)
   ```
 
+<br>
+
 - `TABLE` 확인
 
   ```sql
@@ -114,6 +124,8 @@
   1 row in set (0.00 sec)
   ```
 
+<br>
+
 - `TABLE COLUMN` 확인
   ```sql
   SHOW COLUMNS FROM table_name;
@@ -128,10 +140,15 @@
   +----------+--------------+------+-----+---------+-------+
   2 rows in set (0.00 sec)
   ```
+
+<br>
+
 - `TABLE` 삭제
+
   ```bash
   DROP TABLE table_name;
   ```
+
   ```sql
   mysql> DROP TABLE greenhouse;
   Query OK, 0 rows affected (0.00 sec)

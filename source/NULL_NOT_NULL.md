@@ -96,6 +96,8 @@
   ERROR 1364 (HY000): Field 'quantity' doesn't have a default value
   ```
 
+<br>
+
 - `DEFAULT`
 
   ```sql
@@ -153,6 +155,8 @@
   +---------+----------+
   3 rows in set (0.00 sec)
   ```
+
+<br>
 
 - `NOT NULL` & `DEFAULT`
 
