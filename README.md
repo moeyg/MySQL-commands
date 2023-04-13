@@ -1,8 +1,7 @@
 # MySQL
 
 <figure>
-    <img src="https://labs.mysql.com/common/logos/mysql-logo.svg
-" alt="MySQL Logo" width="250">
+    <img src="https://labs.mysql.com/common/logos/mysql-logo.svg" alt="MySQL Logo" width="250">
 </figure>
 
 ## Commands list
