@@ -37,5 +37,8 @@
 　- [LIKE](https://github.com/moeyg/MySQL/blob/main/source/LIKE.md)
 <br>
 <br>
-• Aggregate function <br>
-　-
+• Counting functions <br>
+　- [GROUP BY]()<br>
+　- [MIN & MAX]()<br>
+　- [SUM]()<br>
+　- [AVG]()<br>
