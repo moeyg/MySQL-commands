@@ -41,7 +41,8 @@
 
 ### Aggregate function <br>
 
-• [GROUP BY]()<br>
-• [MIN & MAX]()<br>
-• [SUM]()<br>
-• [AVG]()<br>
+• [COUNT](https://github.com/moeyg/MySQL/blob/main/source/COUNT.md)<br>
+• [GROUP BY](https://github.com/moeyg/MySQL/blob/main/source/GROUP_BY.md)<br>
+• [MIN & MAX](https://github.com/moeyg/MySQL/blob/main/source/MIN_MAX.md)<br>
+• [SUM](https://github.com/moeyg/MySQL/blob/main/source/SUM.md)<br>
+• [AVG](https://github.com/moeyg/MySQL/blob/main/source/AVG.md)<br>
