@@ -16,14 +16,14 @@
 <br>
 • [PRIMARY KEY](https://github.com/moeyg/MySQL/blob/main/source/PRIMARY_KEY.md)<br>
 
-### CRUD Commands
+### CRUD Command
 
 • [CREATE](https://github.com/moeyg/MySQL/blob/main/source/CREATE.md)<br>
 • [READ](https://github.com/moeyg/MySQL/blob/main/source/READ.md)<br>
 • [UPDATE](https://github.com/moeyg/MySQL/blob/main/source/UPDATE.md)<br>
 • [DELETE](https://github.com/moeyg/MySQL/blob/main/source/DELETE.md)<br>
 
-### String functions <br>
+### String function <br>
 
 • [CONCAT](https://github.com/moeyg/MySQL/blob/main/source/CONCAT.md) <br>
 • [SUBSTRING](https://github.com/moeyg/MySQL/blob/main/source/SUBSTRING.md)<br>
@@ -32,14 +32,14 @@
 • [CHAR_LENGTH](https://github.com/moeyg/MySQL/blob/main/source/CHAR_LENGTH.md)<br>
 • [UPPER & LOWER](https://github.com/moeyg/MySQL/blob/main/source/UPPER_LOWER.md)<br>
 
-### Refining operator <br>
+### Refining selection <br>
 
 • [DISTINCT](https://github.com/moeyg/MySQL/blob/main/source/DISTINCT.md) <br>
 • [ORDER BY](https://github.com/moeyg/MySQL/blob/main/source/ORDER_BY.md) <br>
 • [LIMIT](https://github.com/moeyg/MySQL/blob/main/source/LIMIT.md) <br>
 • [LIKE](https://github.com/moeyg/MySQL/blob/main/source/LIKE.md)<br>
 
-### Counting functions <br>
+### Aggregate function <br>
 
 • [GROUP BY]()<br>
 • [MIN & MAX]()<br>
