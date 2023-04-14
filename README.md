@@ -46,3 +46,13 @@
 • [MIN & MAX](https://github.com/moeyg/MySQL/blob/main/source/MIN_MAX.md)<br>
 • [SUM](https://github.com/moeyg/MySQL/blob/main/source/SUM.md)<br>
 • [AVG](https://github.com/moeyg/MySQL/blob/main/source/AVG.md)<br>
+
+### Data types <br>
+
+• [VARCHAR & CHAR](https://github.com/moeyg/MySQL/blob/main/source/VARCHAR_CHAR.md)<br>
+• [NUMBERS](https://github.com/moeyg/MySQL/blob/main/source/NUMBERS.md)<br>
+• [DATE & TIME & DATETIME](https://github.com/moeyg/MySQL/blob/main/source/DATE_TIME_DATETIME.md)<br>
+　 ref. [CURDATE & CURTIME & NOW](https://github.com/moeyg/MySQL/blob/main/source/CURDATE_CURTIME_NOW.md)<br>
+　 ref. [DATE_FORMAT](https://github.com/moeyg/MySQL/blob/main/source/DATE_FORMAT.md)<br>
+　 ref. [DATE MATH : DATEDIFF, ADD, SUB](https://github.com/moeyg/MySQL/blob/main/source/DATE_MATH.md)<br>
+　 ref. [TIMESTAMP](https://github.com/moeyg/MySQL/blob/main/source/TIMESTAMP.md)<br>
