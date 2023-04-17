@@ -72,7 +72,7 @@
   ```sql
   mysql> SELECT crops, quantity
       -> FROM greenhouse
-      -> WHERE type = "Vegetable";
+      -> WHERE type="Vegetable";
   +------------+----------+
   | crops      | quantity |
   +------------+----------+

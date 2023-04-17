@@ -83,20 +83,20 @@
   -- Update content
 
   mysql> UPDATE comments
-      -> SET content = "Hello, DATABASE :)"
-      -> WHERE content = "Hello, DATABASE!";
+      -> SET content="Hello, DATABASE :)"
+      -> WHERE content="Hello, DATABASE!";
   Query OK, 1 row affected (0.00 sec)
   Rows matched: 1  Changed: 1  Warnings: 0
 
   mysql> UPDATE comments
-      -> SET content = "Hello, World :)"
-      -> WHERE content = "Hello, World!";
+      -> SET content="Hello, World :)"
+      -> WHERE content="Hello, World!";
   Query OK, 0 rows affected (0.00 sec)
   Rows matched: 1  Changed: 0  Warnings: 0
 
   mysql> UPDATE comments
-      -> SET content = "Hello, MySQL :)"
-      -> WHERE content = "Hello, MySQL!";
+      -> SET content="Hello, MySQL :)"
+      -> WHERE content="Hello, MySQL!";
   Query OK, 1 row affected (0.00 sec)
   Rows matched: 1  Changed: 1  Warnings: 0
 

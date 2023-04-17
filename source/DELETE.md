@@ -7,7 +7,7 @@
 
   mysql> DELETE
       -> FROM greenhouse
-      -> WHERE crops = "Strawberry";
+      -> WHERE crops="Strawberry";
   Query OK, 1 row affected (0.00 sec)
 
   -- Result
@@ -33,7 +33,7 @@
 
   mysql> DELETE
       -> FROM greenhouse
-      -> WHERE price <= 600;
+      -> WHERE price<=600;
   Query OK, 4 rows affected (0.00 sec)
 
   -- Result
@@ -53,7 +53,7 @@
 
   mysql> DELETE
       -> FROM greenhouse
-      -> WHERE No = quantity;
+      -> WHERE No=quantity;
   Query OK, 1 row affected (0.00 sec)
 
   -- Result

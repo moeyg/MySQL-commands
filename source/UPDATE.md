@@ -6,15 +6,15 @@
   -- UPDATE column contents
 
   mysql> UPDATE greenhouse
-      -> SET type = "Seed"
-      -> WHERE type = "Seeds";
+      -> SET type="Seed"
+      -> WHERE type="Seeds";
   Query OK, 2 rows affected (0.01 sec)
   Rows matched: 2  Changed: 2  Warnings: 0
 
   -- Result
 
   mysql> SELECT * FROM greenhouse
-      -> WHERE type = "Seed";
+      -> WHERE type="Seed";
   +----+----------+----------+-------+------+
   | No | crops    | quantity | price | type |
   +----+----------+----------+-------+------+
@@ -28,15 +28,15 @@
   -- UPDATE value contents
 
   mysql> UPDATE greenhouse
-      -> SET price = 600
-      -> WHERE crops = "Chestnut";
+      -> SET price=600
+      -> WHERE crops="Chestnut";
   Query OK, 1 row affected (0.01 sec)
   Rows matched: 1  Changed: 1  Warnings: 0
 
   -- Result
 
   mysql> SELECT * FROM greenhouse
-      -> WHERE crops = "Chestnut";
+      -> WHERE crops="Chestnut";
   +----+----------+----------+-------+------+
   | No | crops    | quantity | price | type |
   +----+----------+----------+-------+------+
@@ -49,15 +49,15 @@
   -- UPDATE two crops type value
 
   mysql> UPDATE greenhouse
-      -> SET price = 550
-      -> WHERE type = "Seed";
+      -> SET price=550
+      -> WHERE type="Seed";
   Query OK, 2 rows affected (0.00 sec)
   Rows matched: 2  Changed: 2  Warnings: 0
 
   -- Result
 
   mysql> SELECT * FROM greenhouse
-      -> WHERE type = "Seed";
+      -> WHERE type="Seed";
   +----+----------+----------+-------+------+
   | No | crops    | quantity | price | type |
   +----+----------+----------+-------+------+
