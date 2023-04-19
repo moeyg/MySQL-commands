@@ -114,17 +114,17 @@
   ```
 
   ```sql
-  -- quantity Default value
+  -- PRICE Default value
 
   INSERT INTO SNACKS (NAME)
   VALUES ("Pringles");
 
-  -- crops Default value
+  -- NAME Default value
 
   INSERT INTO SNACKS (PRICE)
   VALUES (1500);
 
-  -- crops & quantity Default value
+  -- NAME & PRICE Default value
 
   INSERT INTO SNACKS ()
   VALUES ();
