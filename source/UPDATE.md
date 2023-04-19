@@ -12,7 +12,7 @@
   ```sql
   -- Result
 
-  mysql> SELECT * FROM BEVERAGES;
+  SELECT * FROM BEVERAGES;
   +---------+-------------+-------+--------------+
   | BARCODE | NAME        | PRICE | TYPE         |
   +---------+-------------+-------+--------------+
