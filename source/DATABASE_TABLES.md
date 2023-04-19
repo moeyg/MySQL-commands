@@ -28,18 +28,18 @@
   ```
 
   ```sql
-  mysql> CREATE DATABASE FARM;
+  mysql> CREATE DATABASE VENDING_MACHINE;
   Query OK, 1 row affected (0.00 sec)
 
   mysql> SHOW DATABASES;
   +--------------------+
   | Database           |
   +--------------------+
-  | FARM               |
   | information_schema |
   | mysql              |
   | performance_schema |
   | sys                |
+  | VENDING_MACHINE    |
   +--------------------+
   5 rows in set (0.01 sec)
   ```
@@ -47,38 +47,28 @@
 - `DATABASE` 사용
 
   ```sql
-  USE database_name;
-  ```
-
-  ```sql
-  mysql> USE FARM;
+  mysql> USE VENDING_MACHINE;
   Database changed
   ```
 
 - 현재 사용 중인 `DATABASE` 확인
 
   ```sql
-  SELECT DATABASE();
-  ```
-
-  ```sql
   mysql> SELECT DATABASE();
-  +------------+
-  | DATABASE() |
-  +------------+
-  | FARM       |
-  +------------+
+  +-----------------+
+  | DATABASE()      |
+  +-----------------+
+  | vending_machine |
+  +-----------------+
   1 row in set (0.00 sec)
   ```
 
 <br>
 
 - `DATABASE` 삭제
+
   ```sql
-  DROP DATABASE database_name;
-  ```
-  ```sql
-  mysql> DROP DATABASE FARM;
+  mysql> DROP DATABASE VENDING_MACHINE;
   Query OK, 0 rows affected (0.00 sec)
   ```
 
@@ -89,20 +79,11 @@
 - `TABLE` 생성
 
   ```sql
-  CREATE TABLE table_name
-  (
-      column_name data_type,
-      column_name data_type
-  );
-
-  ```
-
-  ```sql
-  mysql> CREATE TABLE greenhouse
-      -> (
-      ->     crops VARCHAR(255),
-      ->     quantity INT
-      -> );
+  mysql> CREATE TABLE BEVERAGES
+    -> (
+    ->     NAME VARCHAR(25),
+    ->     PRICE INT
+    -> );
   Query OK, 0 rows affected (0.01 sec)
   ```
 
@@ -111,33 +92,27 @@
 - `TABLE` 확인
 
   ```sql
-  SHOW TABLES;
-  ```
-
-  ```sql
   mysql> SHOW TABLES;
-  +----------------+
-  | Tables_in_farm |
-  +----------------+
-  | greenhouse     |
-  +----------------+
+  +---------------------------+
+  | Tables_in_vending_machine |
+  +---------------------------+
+  | BEVERAGES                 |
+  +---------------------------+
   1 row in set (0.00 sec)
   ```
 
 <br>
 
 - `TABLE COLUMN` 확인
+
   ```sql
-  SHOW COLUMNS FROM table_name;
-  ```
-  ```sql
-  mysql> SHOW COLUMNS FROM greenhouse;
-  +----------+--------------+------+-----+---------+-------+
-  | Field    | Type         | Null | Key | Default | Extra |
-  +----------+--------------+------+-----+---------+-------+
-  | crops    | varchar(255) | YES  |     | NULL    |       |
-  | quantity | int          | YES  |     | NULL    |       |
-  +----------+--------------+------+-----+---------+-------+
+  mysql> SHOW COLUMNS FROM BEVERAGES;
+  +-------+-------------+------+-----+---------+-------+
+  | Field | Type        | Null | Key | Default | Extra |
+  +-------+-------------+------+-----+---------+-------+
+  | NAME  | varchar(25) | YES  |     | NULL    |       |
+  | PRICE | int         | YES  |     | NULL    |       |
+  +-------+-------------+------+-----+---------+-------+
   2 rows in set (0.00 sec)
   ```
 
@@ -146,11 +121,7 @@
 - `TABLE` 삭제
 
   ```sql
-  DROP TABLE table_name;
-  ```
-
-  ```sql
-  mysql> DROP TABLE greenhouse;
+  mysql> DROP TABLE BEVERAGES;
   Query OK, 0 rows affected (0.00 sec)
 
   mysql> SHOW TABLES;
