@@ -1,17 +1,8 @@
 # CONCAT
 
 - `SOURCE` : 파일 불러오기
-
   ```sql
-  SOURCE PATH;
-  ```
-
-  ```sql
-  mysql> SOURCE /Users/moeyg/Database/book_data.sql
-  Query OK, 0 rows affected (0.01 sec)
-
-  Query OK, 16 rows affected (0.00 sec)
-  Records: 16  Duplicates: 0  Warnings: 0
+  SOURCE /Users/moeyg/Database/book_data.sql
   ```
 
 <br>
@@ -21,9 +12,9 @@
   ```sql
   -- books DATA
 
-  mysql> SELECT author_fname,
-      ->        author_lname
-      -> FROM books;
+  SELECT author_fname,
+         author_lname
+  FROM books;
   +--------------+----------------+
   | author_fname | author_lname   |
   +--------------+----------------+
@@ -44,14 +35,13 @@
   | David        | Foster Wallace |
   | David        | Foster Wallace |
   +--------------+----------------+
-  16 rows in set (0.00 sec)
   ```
 
   ```sql
   -- Use CONCAT function
 
-  mysql> SELECT CONCAT(author_fname, " ", author_lname)
-      -> FROM books;
+  SELECT CONCAT(author_fname, " ", author_lname)
+  FROM books;
   +-----------------------------------------+
   | CONCAT(author_fname, " ", author_lname) |
   +-----------------------------------------+
@@ -72,7 +62,6 @@
   | David Foster Wallace                    |
   | David Foster Wallace                    |
   +-----------------------------------------+
-  16 rows in set (0.00 sec)
   ```
 
 <br>
@@ -82,8 +71,9 @@
   ```sql
   -- Use AS
 
-  mysql> SELECT CONCAT(author_fname, " ", author_lname) AS "full name"
-      -> FROM books;
+  SELECT
+  CONCAT(author_fname, " ", author_lname) AS "full name"
+  FROM books;
   +----------------------+
   | full name            |
   +----------------------+
@@ -104,17 +94,16 @@
   | David Foster Wallace |
   | David Foster Wallace |
   +----------------------+
-  16 rows in set (0.00 sec)
   ```
 
   <br>
 
 - `CONCAT` Example
   ```sql
-  mysql> SELECT author_fname AS "first name",
-      ->        author_lname AS "last name",
-      ->        CONCAT(author_fname, ", ", author_lname) AS "full name"
-      -> FROM books;
+  SELECT author_fname AS "first name",
+         author_lname AS "last name",
+         CONCAT(author_fname, ", ", author_lname) AS "full name"
+  FROM books;
   +------------+----------------+-----------------------+
   | first name | last name      | full name             |
   +------------+----------------+-----------------------+
@@ -135,15 +124,15 @@
   | David      | Foster Wallace | David, Foster Wallace |
   | David      | Foster Wallace | David, Foster Wallace |
   +------------+----------------+-----------------------+
-  16 rows in set (0.00 sec)
   ```
 
 <br>
 
 - `CONCAT_WS` : 처음 인자를 구분자로 하여, 나머지 인자들을 결합
   ```sql
-  mysql> SELECT CONCAT_WS(" - ", title, author_fname, author_lname) AS "title - author name"
-      -> FROM books;
+  SELECT CONCAT_WS(" - ", title, author_fname, author_lname)
+         AS "title - author name"
+  FROM books;
   +------------------------------------------------------------------------+
   | title - author name                                                    |
   +------------------------------------------------------------------------+
