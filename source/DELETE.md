@@ -5,66 +5,43 @@
   ```sql
   -- DELETE
 
-  mysql> DELETE
-      -> FROM greenhouse
-      -> WHERE crops="Strawberry";
-  Query OK, 1 row affected (0.00 sec)
-
+  DELETE
+  FROM BEVERAGES
+  WHERE NAME="Pepsi";
+  ```
+  ```sql
   -- Result
 
-  mysql> SELECT * FROM greenhouse;
-  +----+-------------+----------+-------+-----------+
-  | No | crops       | quantity | price | type      |
-  +----+-------------+----------+-------+-----------+
-  |  1 | Potato      |        5 |   500 | Bulbous   |
-  |  2 | Pumpkin     |        2 |  1000 | Vegetable |
-  |  3 | Chestnut    |        3 |   550 | Seed      |
-  |  4 | Walnut      |        4 |   550 | Seed      |
-  |  5 | Carrot      |       10 |   700 | Vegetable |
-  |  7 | Sweetpotato |        7 |   600 | Bulbous   |
-  +----+-------------+----------+-------+-----------+
-  6 rows in set (0.00 sec)
-
-  -- ❗️ NOT CHANGED No value
+  SELECT * FROM BEVERAGES;
+  +---------+-------------+-------+--------------+
+  | BARCODE | NAME        | PRICE | TYPE         |
+  +---------+-------------+-------+--------------+
+  |       1 | CocaCola    |  1900 | SOFT_DRINK   |
+  |       2 | Sprite      |  1900 | SOFT_DRINK   |
+  |       4 | PocariSweat |  2200 | SPORTS_DRINK |
+  |       5 | Monster     |  2500 | ENERGY_DRINK |
+  +---------+-------------+-------+--------------+
+  
+  -- ❗️ NOT CHANGED BARCODE value
   ```
-
   ```sql
   -- DELETE
 
-  mysql> DELETE
-      -> FROM greenhouse
-      -> WHERE price<=600;
-  Query OK, 4 rows affected (0.00 sec)
-
-  -- Result
-
-  mysql> SELECT * FROM greenhouse;
-  +----+---------+----------+-------+-----------+
-  | No | crops   | quantity | price | type      |
-  +----+---------+----------+-------+-----------+
-  |  2 | Pumpkin |        2 |  1000 | Vegetable |
-  |  5 | Carrot  |       10 |   700 | Vegetable |
-  +----+---------+----------+-------+-----------+
-  2 rows in set (0.00 sec)
+  DELETE
+  FROM BEVERAGES
+  WHERE PRICE=2200;
   ```
-
   ```sql
-  -- DELETE
-
-  mysql> DELETE
-      -> FROM greenhouse
-      -> WHERE No=quantity;
-  Query OK, 1 row affected (0.00 sec)
-
   -- Result
 
-  mysql> SELECT * FROM greenhouse;
-  +----+--------+----------+-------+-----------+
-  | No | crops  | quantity | price | type      |
-  +----+--------+----------+-------+-----------+
-  |  5 | Carrot |       10 |   700 | Vegetable |
-  +----+--------+----------+-------+-----------+
-  1 row in set (0.00 sec)
+  SELECT * FROM BEVERAGES;
+  +---------+----------+-------+--------------+
+  | BARCODE | NAME     | PRICE | TYPE         |
+  +---------+----------+-------+--------------+
+  |       1 | CocaCola |  1900 | SOFT_DRINK   |
+  |       2 | Sprite   |  1900 | SOFT_DRINK   |
+  |       5 | Monster  |  2500 | ENERGY_DRINK |
+  +---------+----------+-------+--------------+
   ```
 
 <br>
@@ -74,25 +51,26 @@
   ```sql
   -- DELETE TABLE
 
-  mysql> DELETE FROM greenhouse;
-  Query OK, 0 rows affected (0.00 sec)
-
+  DELETE FROM BEVERAGES;
+  ```
+  ```sql
   -- Result : DELETE is keeps the table
 
-  mysql> SHOW TABLES;
-  +----------------+
-  | Tables_in_farm |
-  +----------------+
-  | greenhouse     |
-  +----------------+
-
+  SHOW TABLES;
+  +---------------------------+
+  | Tables_in_vending_machine |
+  +---------------------------+
+  | BEVERAGES                 |
+  +---------------------------+
+  ```
+  ```sql
   -- ❗️ DROP TABLE
 
-  mysql> DROP TABLE greenhouse2;
-  Query OK, 0 rows affected (0.00 sec)
-
+  DROP TABLE BEVERAGES;
+  ```
+  ```sql
   -- Result
 
-  mysql> SHOW TABLES;
+  SHOW TABLES;
   Empty set (0.00 sec)
   ```
