@@ -5,56 +5,50 @@
   ```sql
   -- Setting PRIMARY KEY
 
-  mysql> CREATE TABLE greenhouse5
-      -> (
-      ->     No INT NOT NULL,
-      ->     crops VARCHAR(255),
-      ->     quantity INT,
-      ->     PRIMARY KEY (No)
-      -> );
-  Query OK, 0 rows affected (0.01 sec)
+  CREATE TABLE BEVERAGES
+  (
+      BARCODE INT NOT NULL,
+      NAME VARCHAR(25),
+      PRICE INT,
+      PRIMARY KEY (BARCODE)
+  );
 
   -- Other way
-
-  mysql> CREATE TABLE greenhouse5
-      -> (
-      ->     No INT PRIMARY KEY NOT NULL,
-      ->     crops VARCHAR(255),
-      ->     quantity INT
-      -> );
+  CREATE TABLE BEVERAGES
+  (
+      BARCODE INT NOT NULL PRIMARY KEY,
+      NAME VARCHAR(25),
+      PRICE INT
+  );
 
   -- Result
 
-  mysql> SHOW COLUMNS FROM greenhouse5;
-  +----------+--------------+------+-----+---------+-------+
-  | Field    | Type         | Null | Key | Default | Extra |
-  +----------+--------------+------+-----+---------+-------+
-  | No       | int          | NO   | PRI | NULL    |       |
-  | crops    | varchar(255) | YES  |     | NULL    |       |
-  | quantity | int          | YES  |     | NULL    |       |
-  +----------+--------------+------+-----+---------+-------+
-  3 rows in set (0.00 sec)
+  SHOW COLUMNS FROM BEVERAGES;
+  +---------+-------------+------+-----+---------+-------+
+  | Field   | Type        | Null | Key | Default | Extra |
+  +---------+-------------+------+-----+---------+-------+
+  | BARCODE | int         | NO   | PRI | NULL    |       |    
+  | NAME    | varchar(25) | YES  |     | NULL    |       |
+  | PRICE   | int         | YES  |     | NULL    |       |
+  +---------+-------------+------+-----+---------+-------+
   ```
 
   ```sql
   -- Insert PRIMARY KEY
 
-  mysql> INSERT INTO greenhouse5 (No, crops, quantity)
-      -> VALUES (1, "Chestnut", 20),
-      ->        (2, "Walnut", 20);
-  Query OK, 2 rows affected (0.01 sec)
-  Records: 2  Duplicates: 0  Warnings: 0
+  INSERT INTO BEVERAGES (BARCODE, NAME, PRICE)
+  VALUES (1, "CocaCola", 2000),
+         (2, "Sprite", 1800);
 
   -- Result
 
-  mysql> SELECT * FROM greenhouse5;
-  +----+----------+----------+
-  | No | crops    | quantity |
-  +----+----------+----------+
-  |  1 | Chestnut |       20 |
-  |  2 | Walnut   |       20 |
-  +----+----------+----------+
-  2 rows in set (0.00 sec)
+  SELECT * FROM BEVERAGES;
+  +---------+----------+-------+
+  | BARCODE | NAME     | PRICE |
+  +---------+----------+-------+
+  |       1 | CocaCola |  2000 |
+  |       2 | Sprite   |  1800 |
+  +---------+----------+-------+
   ```
 
 <br>
@@ -62,11 +56,9 @@
 - 이미 `PRIMARY KEY`가 존재하는 경우
 
   ```sql
-  -- If assigning a key value that already exists.
-
-  mysql> INSERT INTO greenhouse5 (No, crops, quantity)
-      -> VALUES (1, "Garlic", 30);
-  ERROR 1062 (23000): Duplicate entry "1" for key "greenhouse5.PRIMARY"
+  INSERT INTO BEVERAGES (BARCODE, NAME, PRICE)
+  VALUES (1, "Pepsi", 2000);
+  ERROR 1062 (23000): Duplicate entry "1" for key "BEVERAGES.PRIMARY"
   ```
 
 <br>
@@ -76,46 +68,43 @@
   ```sql
   -- Setting AUTO_INCREMENT
 
-  mysql> CREATE TABLE greenhouse6
-      -> (
-      ->     No INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-      ->     crops VARCHAR(255),
-      ->     quantity INT
-      -> );
-  Query OK, 0 rows affected (0.01 sec)
-
+  CREATE TABLE BEVERAGES
+  (
+      BARCODE INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+      NAME VARCHAR(25),
+      PRICE INT
+  );
+  
   -- Result
 
-  mysql> SHOW COLUMNS FROM greenhouse6;
-  +----------+--------------+------+-----+---------+----------------+
-  | Field    | Type         | Null | Key | Default | Extra          |
-  +----------+--------------+------+-----+---------+----------------+
-  | No       | int          | NO   | PRI | NULL    | auto_increment |
-  | crops    | varchar(255) | YES  |     | NULL    |                |
-  | quantity | int          | YES  |     | NULL    |                |
-  +----------+--------------+------+-----+---------+----------------+
-  3 rows in set (0.00 sec)
+  SHOW COLUMNS FROM BEVERAGES;
+  +---------+-------------+------+-----+---------+----------------+ 
+  | Field   | Type        | Null | Key | Default | Extra          |
+  +---------+-------------+------+-----+---------+----------------+
+  | BARCODE | int         | NO   | PRI | NULL    | auto_increment |
+  | NAME    | varchar(25) | YES  |     | NULL    |                |
+  | PRICE   | int         | YES  |     | NULL    |                |
+  +---------+-------------+------+-----+---------+----------------+
   ```
 
   ```sql
   -- Insert datas
 
-  mysql> INSERT INTO greenhouse6 (crops, quantity)
-      -> VALUES ("Radish", 3),
-      ->        ("Pepper", 2),
-      ->        ("Sweetpotato", 3);
-  Query OK, 3 rows affected (0.00 sec)
-  Records: 3  Duplicates: 0  Warnings: 0
+  INSERT INTO BEVERAGES (NAME, PRICE)
+  VALUES ("CocaCola", 2000),
+         ("Sprite", 1800),
+         ("Pepsi", 2000),
+         ("PocariSweat", 2200);
 
   -- Result
 
-  mysql> SELECT * FROM greenhouse6;
-  +----+-------------+----------+
-  | No | crops       | quantity |
-  +----+-------------+----------+
-  |  1 | Radish      |        3 |
-  |  2 | Pepper      |        2 |
-  |  3 | Sweetpotato |        3 |
-  +----+-------------+----------+
-  3 rows in set (0.00 sec)
+  SELECT * FROM BEVERAGES;
+  +---------+-------------+-------+
+  | BARCODE | NAME        | PRICE |
+  +---------+-------------+-------+
+  |       1 | CocaCola    |  2000 |
+  |       2 | Sprite      |  1800 |
+  |       3 | Pepsi       |  2000 |
+  |       4 | PocariSweat |  2200 |
+  +---------+-------------+-------+
   ```
