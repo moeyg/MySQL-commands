@@ -36,12 +36,16 @@
   | VENDING_MACHINE    |
   +--------------------+
   ```
+  
+<br>
 
 - `DATABASE` 사용
 
   ```sql
   USE VENDING_MACHINE;
   ```
+
+<br>
 
 - 현재 사용 중인 `DATABASE` 확인
 
