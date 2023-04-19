@@ -5,35 +5,33 @@
   ```sql
   -- Two index
 
-  mysql> SELECT SUBSTRING("Hello, World!", 1, 6);
+  SELECT SUBSTRING("Hello, World!", 1, 6);
   +----------------------------------+
   | SUBSTRING("Hello, World!", 1, 6) |
   +----------------------------------+
   | Hello,                           |
   +----------------------------------+
-  1 row in set (0.00 sec)
-
+  ```
+  ```sql
   -- One index
 
-  mysql> SELECT SUBSTRING("Hello, World!", 7);
+  SELECT SUBSTRING("Hello, World!", 7);
   +-------------------------------+
   | SUBSTRING("Hello, World!", 7) |
   +-------------------------------+
   |  World!                       |
   +-------------------------------+
-  1 row in set (0.00 sec)
-
+  ```
+  ```sql
   -- Negative index
 
-  mysql> SELECT SUBSTRING("Hello, World!", -5);
+  SELECT SUBSTRING("Hello, World!", -5);
   +--------------------------------+
   | SUBSTRING("Hello, World!", -5) |
   +--------------------------------+
   | orld!                          |
   +--------------------------------+
-  1 row in set (0.00 sec)
   ```
-
   ```sql
   mysql> SELECT SUBSTRING(title, 1, 10)
       -> FROM books;
@@ -57,14 +55,13 @@
   | Oblivion:               |
   | Consider t              |
   +-------------------------+
-  16 rows in set (0.00 sec)
   ```
-
   ```sql
   -- Use AS
 
-  mysql> SELECT SUBSTRING(title, 1, 10) AS "short title"
-      -> FROM books;
+  SELECT SUBSTRING(title, 1, 10)
+         AS "short title"
+  FROM books;
   +-------------+
   | short title |
   +-------------+
@@ -85,15 +82,15 @@
   | Oblivion:   |
   | Consider t  |
   +-------------+
-  16 rows in set (0.00 sec)
   ```
 
 <br>
 
 - `CONCAT` + `SUBSTRING` Example
   ```sql
-  mysql> SELECT CONCAT(SUBSTRING(title, 1, 10), " ...") AS "short title"
-      -> FROM books;
+  SELECT CONCAT(SUBSTRING(title, 1, 10), " ...")
+         AS "short title"
+  FROM books;
   +----------------+
   | short title    |
   +----------------+
@@ -114,5 +111,4 @@
   | Oblivion:  ... |
   | Consider t ... |
   +----------------+
-  16 rows in set (0.00 sec)
   ```
