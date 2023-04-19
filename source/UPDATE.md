@@ -5,64 +5,42 @@
   ```sql
   -- UPDATE column contents
 
-  mysql> UPDATE greenhouse
-      -> SET type="Seed"
-      -> WHERE type="Seeds";
-  Query OK, 2 rows affected (0.01 sec)
-  Rows matched: 2  Changed: 2  Warnings: 0
-
-  -- Result
-
-  mysql> SELECT * FROM greenhouse
-      -> WHERE type="Seed";
-  +----+----------+----------+-------+------+
-  | No | crops    | quantity | price | type |
-  +----+----------+----------+-------+------+
-  |  3 | Chestnut |        3 |   600 | Seed |
-  |  4 | Walnut   |        4 |   500 | Seed |
-  +----+----------+----------+-------+------+
-  2 rows in set (0.00 sec)
+  UPDATE BEVERAGES
+  SET PRICE=2500
+  WHERE NAME="Monster";
   ```
-
   ```sql
-  -- UPDATE value contents
-
-  mysql> UPDATE greenhouse
-      -> SET price=600
-      -> WHERE crops="Chestnut";
-  Query OK, 1 row affected (0.01 sec)
-  Rows matched: 1  Changed: 1  Warnings: 0
-
   -- Result
 
-  mysql> SELECT * FROM greenhouse
-      -> WHERE crops="Chestnut";
-  +----+----------+----------+-------+------+
-  | No | crops    | quantity | price | type |
-  +----+----------+----------+-------+------+
-  |  3 | Chestnut |        3 |   600 | Seed |
-  +----+----------+----------+-------+------+
-  1 row in set (0.00 sec)
+  mysql> SELECT * FROM BEVERAGES;
+  +---------+-------------+-------+--------------+
+  | BARCODE | NAME        | PRICE | TYPE         |
+  +---------+-------------+-------+--------------+
+  |       1 | CocaCola    |  2000 | SOFT_DRINK   |
+  |       2 | Sprite      |  1800 | SOFT_DRINK   |
+  |       3 | Pepsi       |  2000 | SOFT_DRINK   |
+  |       4 | PocariSweat |  2200 | SPORTS_DRINK |
+  |       5 | Monster     |  2500 | ENERGY_DRINK |  -- UPDATE PRICE 2000 → 2500
+  +---------+-------------+-------+--------------+
   ```
-
   ```sql
   -- UPDATE two crops type value
 
-  mysql> UPDATE greenhouse
-      -> SET price=550
-      -> WHERE type="Seed";
-  Query OK, 2 rows affected (0.00 sec)
-  Rows matched: 2  Changed: 2  Warnings: 0
-
+  UPDATE BEVERAGES
+  SET PRICE=1900
+  WHERE TYPE="SOFT_DRINK";
+  ```
+  ```sql
   -- Result
 
-  mysql> SELECT * FROM greenhouse
-      -> WHERE type="Seed";
-  +----+----------+----------+-------+------+
-  | No | crops    | quantity | price | type |
-  +----+----------+----------+-------+------+
-  |  3 | Chestnut |        3 |   550 | Seed |
-  |  4 | Walnut   |        4 |   550 | Seed |
-  +----+----------+----------+-------+------+
-  2 rows in set (0.00 sec)
+  SELECT * FROM BEVERAGES;
+  +---------+-------------+-------+--------------+
+  | BARCODE | NAME        | PRICE | TYPE         |
+  +---------+-------------+-------+--------------+
+  |       1 | CocaCola    |  1900 | SOFT_DRINK   |  -- UPDATE PRICE 2000 → 1900
+  |       2 | Sprite      |  1900 | SOFT_DRINK   |  -- UPDATE PRICE 1800 → 1900
+  |       3 | Pepsi       |  1900 | SOFT_DRINK   |  -- UPDATE PRICE 2000 → 1900
+  |       4 | PocariSweat |  2200 | SPORTS_DRINK |
+  |       5 | Monster     |  2500 | ENERGY_DRINK |
+  +---------+-------------+-------+--------------+
   ```
