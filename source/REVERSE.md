@@ -2,65 +2,70 @@
 
 - `REVERSE` : 문자열 반전하기
   ```sql
-  mysql> SELECT REVERSE("Hello, World!");
+  SELECT REVERSE("Hello, World!");
   +--------------------------+
   | REVERSE("Hello, World!") |
   +--------------------------+
   | !dlroW ,olleH            |
   +--------------------------+
-  1 row in set (0.00 sec)
   ```
   ```sql
-  mysql> SELECT REVERSE(author_fname)
-      -> FROM books;
-  +-----------------------+
-  | REVERSE(author_fname) |
-  +-----------------------+
-  | apmuhJ                |
-  | lieN                  |
-  | lieN                  |
-  | apmuhJ                |
-  | evaD                  |
-  | evaD                  |
-  | leahciM               |
-  | ittaP                 |
-  | evaD                  |
-  | lieN                  |
-  | dnomyaR               |
-  | dnomyaR               |
-  | noD                   |
-  | nhoJ                  |
-  | divaD                 |
-  | divaD                 |
-  +-----------------------+
-  16 rows in set (0.00 sec)
+  SELECT
+  REVERSE(TITLE)
+  FROM BOOKS;
+  +-----------------------------------------------------+
+  | REVERSE(TITLE)                                      |
+  +-----------------------------------------------------+
+  | ekasemaN ehT                                        |
+  | ygolohtyM esroN                                     |
+  | sdoG naciremA                                       |
+  | seidalaM fo reterpretnI                             |
+  | levoN A :gniK eht rof margoloH A                    |
+  | elcriC ehT                                          |
+  | yalC & reilavaK fo serutnevdA gnizamA ehT           |
+  | sdiK tsuJ                                           |
+  | suineG gnireggatS fo kroW gnikaerbtraeH A           |
+  | enilaroC                                            |
+  | seirotS :evoL tuobA klaT eW nehW tuobA klaT eW tahW |
+  | seirotS detceleS :morF gnillaC m'I erehW            |
+  | esioN etihW                                         |
+  | woR yrennaC                                         |
+  | seirotS :noivilbO                                   |
+  | retsboL eht redisnoC                                |
+  | reippaH %01                                         |
+  | KOOB_EKAF                                           |
+  | odraB ehT nI nlocniL                                |
+  +-----------------------------------------------------+
   ```
 
 <br>
 
 - `CONCAT` + `REVERSE` Example
   ```sql
-  mysql> SELECT CONCAT(author_fname, REVERSE(author_fname)) AS "weird name"
-      -> FROM books;
-  +----------------+
-  | weird name     |
-  +----------------+
-  | JhumpaapmuhJ   |
-  | NeillieN       |
-  | NeillieN       |
-  | JhumpaapmuhJ   |
-  | DaveevaD       |
-  | DaveevaD       |
-  | MichaelleahciM |
-  | PattiittaP     |
-  | DaveevaD       |
-  | NeillieN       |
-  | RaymonddnomyaR |
-  | RaymonddnomyaR |
-  | DonnoD         |
-  | JohnnhoJ       |
-  | DaviddivaD     |
-  | DaviddivaD     |
-  +----------------+
-  16 rows in set (0.00 sec)
+  SELECT
+  CONCAT(AUTHOR_FIRST_NAME, REVERSE(AUTHOR_LAST_NAME)) AS "WEIRD NAME"
+  FROM BOOKS;
+  +---------------------+
+  | WEIRD NAME          |
+  +---------------------+
+  | JhumpairihaL        |
+  | NeilnamiaG          |
+  | NeilnamiaG          |
+  | JhumpairihaL        |
+  | DavesreggE          |
+  | DavesreggE          |
+  | MichaelnobahC       |
+  | PattihtimS          |
+  | DavesreggE          |
+  | NeilnamiaG          |
+  | RaymondrevraC       |
+  | RaymondrevraC       |
+  | DonolliLeD          |
+  | JohnkcebnietS       |
+  | DavidecallaW retsoF |
+  | DavidecallaW retsoF |
+  | DansirraH           |
+  | FreidasirraH        |
+  | GeorgesrednuaS      |
+  +---------------------+
   ```
