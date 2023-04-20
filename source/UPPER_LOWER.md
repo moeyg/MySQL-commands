@@ -3,20 +3,19 @@
 - `UPPER` : 문자열을 대문자로 치환하기
 
   ```sql
-    mysql> SELECT UPPER("hello, world!!");
+    SELECT UPPER("hello, world!!");
     +------------------------+
     | UPPER("hello, world!") |
     +------------------------+
     | HELLO, WORLD!!         |
     +------------------------+
-    1 row in set (0.00 sec)
   ```
-
   ```sql
-    mysql> SELECT CONCAT("MY FAVORITE BOOK IS ", UPPER(title)) AS "FAVORITE BOOKS"
-        -> FROM books;
+    SELECT
+    CONCAT("MY FAVORITE BOOK IS ", UPPER(TITLE)) AS "FAVORITE BOOK"
+    FROM BOOKS;
     +-------------------------------------------------------------------------+
-    | FAVORITE BOOKS                                                          |
+    | FAVORITE BOOK                                                           |
     +-------------------------------------------------------------------------+
     | MY FAVORITE BOOK IS THE NAMESAKE                                        |
     | MY FAVORITE BOOK IS NORSE MYTHOLOGY                                     |
@@ -35,26 +34,25 @@
     | MY FAVORITE BOOK IS OBLIVION: STORIES                                   |
     | MY FAVORITE BOOK IS CONSIDER THE LOBSTER                                |
     +-------------------------------------------------------------------------+
-    16 rows in set (0.00 sec)
   ```
 
   <br>
 
 - `LOWER` : 문자열을 소문자로 치환하기
   ```sql
-  mysql> SELECT LOWER("HELLO, WORLD!");
+  SELECT LOWER("HELLO, WORLD!");
   +------------------------+
   | LOWER("HELLO, WORLD!") |
   +------------------------+
   | hello, world!          |
   +------------------------+
-  1 row in set (0.00 sec)
   ```
   ```sql
-  mysql> SELECT CONCAT("my favorite book is ", LOWER(title)) AS "favorite books"
-      -> FROM books;
+  SELECT
+  CONCAT("my favorite book is ", LOWER(TITLE)) AS "favorite book"
+  FROM BOOKS;
   +-------------------------------------------------------------------------+
-  | favorite books                                                          |
+  | favorite book                                                           |
   +-------------------------------------------------------------------------+
   | my favorite book is the namesake                                        |
   | my favorite book is norse mythology                                     |
@@ -73,5 +71,4 @@
   | my favorite book is oblivion: stories                                   |
   | my favorite book is consider the lobster                                |
   +-------------------------------------------------------------------------+
-  16 rows in set (0.00 sec)
   ```
