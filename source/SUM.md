@@ -3,37 +3,36 @@
 - `SUM` : 데이터의 합계를 구하는 함수
     
     ```sql
-    mysql> SELECT SUM(pages)
-        -> FROM books;
-    +------------+
-    | SUM(pages) |
-    +------------+
-    |       6623 |
-    +------------+
-    1 row in set (0.01 sec)
+    SELECT
+    SUM(PAGES) AS "SUM OF PAGES"
+    FROM BOOKS;
+    +--------------+
+    | SUM OF PAGES |
+    +--------------+
+    |         6623 |
+    +--------------+
     ```
     
     ```sql
-    mysql> SELECT CONCAT(author_lname, " ", author_fname) AS "author",
-        ->        SUM(pages) AS "All pages"
-        -> FROM books
-        -> GROUP BY author_lname,
-        ->          author_fname;
-    +----------------------+-----------+
-    | author               | All pages |
-    +----------------------+-----------+
-    | Lahiri Jhumpa        |       489 |
-    | Gaiman Neil          |       977 |
-    | Eggers Dave          |      1293 |
-    | Chabon Michael       |       634 |
-    | Smith Patti          |       304 |
-    | Carver Raymond       |       702 |
-    | DeLillo Don          |       320 |
-    | Steinbeck John       |       181 |
-    | Foster Wallace David |       672 |
-    | Harris Dan           |       256 |
-    | Harris Freida        |       428 |
-    | Saunders George      |       367 |
-    +----------------------+-----------+
-    12 rows in set (0.00 sec)
+    SELECT CONCAT(AUTHOR_FIRST_NAME, " ", AUTHOR_LAST_NAME) AS "AUTHOR",
+           SUM(PAGES) AS "SUM OF PAGES"
+    FROM BOOKS
+    GROUP BY AUTHOR_FIRST_NAME, AUTHOR_LAST_NAME;
+    +----------------------+--------------+
+    | AUTHOR               | SUM OF PAGES |
+    +----------------------+--------------+
+    | Jhumpa Lahiri        |          489 |
+    | Neil Gaiman          |          977 |
+    | Dave Eggers          |         1293 |
+    | Michael Chabon       |          634 |
+    | Patti Smith          |          304 |
+    | Raymond Carver       |          702 |
+    | Don DeLillo          |          320 |
+    | John Steinbeck       |          181 |
+    | David Foster Wallace |          672 |
+    | Dan Harris           |          256 |
+    | Freida Harris        |          428 |
+    | George Saunders      |          367 |
+    +----------------------+--------------+
     ```
+    
