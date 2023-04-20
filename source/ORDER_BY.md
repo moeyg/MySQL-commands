@@ -3,43 +3,40 @@
 - `ORDER BY` : 오름차순 결과 정렬 연산자 (Asencding default)
 
   ```sql
-  mysql> SELECT title
-      -> FROM books
-      -> ORDER BY title;
-  +-----------------------------------------------------+
-  | title                                               |
-  +-----------------------------------------------------+
-  | 10% Happier                                         |
-  | A Heartbreaking Work of Staggering Genius           |
-  | A Hologram for the King: A Novel                    |
-  | American Gods                                       |
-  | Cannery Row                                         |
-  | Consider the Lobster                                |
-  | Coraline                                            |
-  | fake_book                                           |
-  | Interpreter of Maladies                             |
-  | Just Kids                                           |
-  | Lincoln In The Bardo                                |
-  | Norse Mythology                                     |
-  | Oblivion: Stories                                   |
-  | The Amazing Adventures of Kavalier & Clay           |
-  | The Circle                                          |
-  | The Namesake                                        |
-  | What We Talk About When We Talk About Love: Stories |
-  | Where I'm Calling From: Selected Stories            |
-  | White Noise                                         |
-  +-----------------------------------------------------+
-  19 rows in set (0.00 sec)
+  SELECT TITLE, STOCK_QUANTITY
+  FROM BOOKS
+  ORDER BY STOCK_QUANTITY;
+  +-----------------------------------------------------+----------------+
+  | TITLE                                               | STOCK_QUANTITY |
+  +-----------------------------------------------------+----------------+
+  | American Gods                                       |             12 |
+  | Where I'm Calling From: Selected Stories            |             12 |
+  | What We Talk About When We Talk About Love: Stories |             23 |
+  | The Circle                                          |             26 |
+  | 10% Happier                                         |             29 |
+  | The Namesake                                        |             32 |
+  | Norse Mythology                                     |             43 |
+  | White Noise                                         |             49 |
+  | Just Kids                                           |             55 |
+  | The Amazing Adventures of Kavalier & Clay           |             68 |
+  | Consider the Lobster                                |             92 |
+  | Cannery Row                                         |             95 |
+  | Interpreter of Maladies                             |             97 |
+  | Coraline                                            |            100 |
+  | A Heartbreaking Work of Staggering Genius           |            104 |
+  | A Hologram for the King: A Novel                    |            154 |
+  | Oblivion: Stories                                   |            172 |
+  | FAKE_BOOK                                           |            287 |
+  | Lincoln In The Bardo                                |           1000 |
+  +-----------------------------------------------------+----------------+
   ```
 
   ```sql
-  mysql> SELECT title,
-      ->        released_year,
-      ->        pages
-      -> FROM books
-      -> ORDER BY released_year;
+  SELECT TITLE, RELEASED_YEAR, PAGES
+  FROM BOOKS
+  ORDER BY RELEASED_YEAR;
   +-----------------------------------------------------+---------------+-------+
-  | title                                               | released_year | pages |
+  | TITLE                                               | RELEASED_YEAR | PAGES |
   +-----------------------------------------------------+---------------+-------+
   | Cannery Row                                         |          1945 |   181 |
   | What We Talk About When We Talk About Love: Stories |          1981 |   176 |
@@ -61,7 +58,6 @@
   | Norse Mythology                                     |          2016 |   304 |
   | Lincoln In The Bardo                                |          2017 |   367 |
   +-----------------------------------------------------+---------------+-------+
-  19 rows in set (0.00 sec)
   ```
 
     <br>
@@ -69,11 +65,11 @@
 - `DESC` : 결과 정렬을 내림차순으로
 
   ```sql
-  mysql> SELECT title
-      -> FROM books
-      -> ORDER BY title DESC;
+  SELECT TITLE
+  FROM BOOKS
+  ORDER BY TITLE DESC;
   +-----------------------------------------------------+
-  | title                                               |
+  | TITLE                                               |
   +-----------------------------------------------------+
   | White Noise                                         |
   | Where I'm Calling From: Selected Stories            |
@@ -95,17 +91,14 @@
   | A Heartbreaking Work of Staggering Genius           |
   | 10% Happier                                         |
   +-----------------------------------------------------+
-  19 rows in set (0.00 sec)
   ```
 
   ```sql
-  mysql> SELECT title,
-      ->        released_year,
-      ->        pages
-      -> FROM books
-      -> ORDER BY released_year;
+  SELECT TITLE, RELEASED_YEAR, PAGES
+  FROM BOOKS
+  ORDER BY RELEASERD_YEAR;
   +-----------------------------------------------------+---------------+-------+
-  | title                                               | released_year | pages |
+  | TITLE                                               | RELEASED_YEAR | PAGES |
   +-----------------------------------------------------+---------------+-------+
   | Cannery Row                                         |          1945 |   181 |
   | What We Talk About When We Talk About Love: Stories |          1981 |   176 |
@@ -127,40 +120,30 @@
   | Norse Mythology                                     |          2016 |   304 |
   | Lincoln In The Bardo                                |          2017 |   367 |
   +-----------------------------------------------------+---------------+-------+
-  19 rows in set (0.01 sec)
   ```
 
   <br>
 
 - `ORDER BY first, second` : `first` 조건으로 정렬한 뒤, `second` 조건에 따라 정렬
   ```sql
-  mysql> SELECT author_fname,
-      ->        author_lname
-      -> FROM books
-      -> ORDER BY author_lname,
-      ->          author_fname;
-  +--------------+----------------+
-  | author_fname | author_lname   |
-  +--------------+----------------+
-  | Raymond      | Carver         |
-  | Raymond      | Carver         |
-  | Michael      | Chabon         |
-  | Don          | DeLillo        |
-  | Dave         | Eggers         |
-  | Dave         | Eggers         |
-  | Dave         | Eggers         |
-  | David        | Foster Wallace |
-  | David        | Foster Wallace |
-  | Neil         | Gaiman         |
-  | Neil         | Gaiman         |
-  | Neil         | Gaiman         |
-  | Dan          | Harris         |
-  | Freida       | Harris         |
-  | Jhumpa       | Lahiri         |
-  | Jhumpa       | Lahiri         |
-  | George       | Saunders       |
-  | Patti        | Smith          |
-  | John         | Steinbeck      |
-  +--------------+----------------+
-  19 rows in set (0.00 sec)
+  SELECT
+  DISTINCT AUTHOR_FIRST_NAME, AUTHOR_LAST_NAME
+  FROM BOOKS
+  ORDER BY AUTHOR_FIRST_NAME, AUTHOR_LAST_NAME;
+  +-------------------+------------------+
+  | AUTHOR_FIRST_NAME | AUTHOR_LAST_NAME |
+  +-------------------+------------------+
+  | Dan               | Harris           |
+  | Dave              | Eggers           |
+  | David             | Foster Wallace   |
+  | Don               | DeLillo          |
+  | Freida            | Harris           |
+  | George            | Saunders         |
+  | Jhumpa            | Lahiri           |
+  | John              | Steinbeck        |
+  | Michael           | Chabon           |
+  | Neil              | Gaiman           |
+  | Patti             | Smith            |
+  | Raymond           | Carver           |
+  +-------------------+------------------+
   ```
