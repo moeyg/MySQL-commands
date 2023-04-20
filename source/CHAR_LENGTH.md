@@ -2,67 +2,71 @@
 
 - `CHAR_LENGTH` : 문자열의 길이 구하기
   ```sql
-  mysql> SELECT CHAR_LENGTH("Hello, World!");
+  SELECT CHAR_LENGTH("Hello, World!");
   +------------------------------+
   | CHAR_LENGTH("Hello, World!") |
   +------------------------------+
   |                           13 |
   +------------------------------+
-  1 row in set (0.03 sec)
   ```
   ```sql
-  mysql> SELECT author_lname,
-      ->        CHAR_LENGTH(author_lname) AS "length"
-      -> FROM books;
-  +----------------+--------+
-  | author_lname   | length |
-  +----------------+--------+
-  | Lahiri         |      6 |
-  | Gaiman         |      6 |
-  | Gaiman         |      6 |
-  | Lahiri         |      6 |
-  | Eggers         |      6 |
-  | Eggers         |      6 |
-  | Chabon         |      6 |
-  | Smith          |      5 |
-  | Eggers         |      6 |
-  | Gaiman         |      6 |
-  | Carver         |      6 |
-  | Carver         |      6 |
-  | DeLillo        |      7 |
-  | Steinbeck      |      9 |
-  | Foster Wallace |     14 |
-  | Foster Wallace |     14 |
-  +----------------+--------+
-  16 rows in set (0.01 sec)
+  SELECT TITLE,
+         CHAR_LENGTH(TITLE) AS "TITLE LENGTH"
+  FROM BOOKS;
+  +-----------------------------------------------------+--------------+
+  | TITLE                                               | TITLE LENGTH |
+  +-----------------------------------------------------+--------------+
+  | The Namesake                                        |           12 |
+  | Norse Mythology                                     |           15 |
+  | American Gods                                       |           13 |
+  | Interpreter of Maladies                             |           23 |
+  | A Hologram for the King: A Novel                    |           32 |
+  | The Circle                                          |           10 |
+  | The Amazing Adventures of Kavalier & Clay           |           41 |
+  | Just Kids                                           |            9 |
+  | A Heartbreaking Work of Staggering Genius           |           41 |
+  | Coraline                                            |            8 |
+  | What We Talk About When We Talk About Love: Stories |           51 |
+  | Where I'm Calling From: Selected Stories            |           40 |
+  | White Noise                                         |           11 |
+  | Cannery Row                                         |           11 |
+  | Oblivion: Stories                                   |           17 |
+  | Consider the Lobster                                |           20 |
+  | 10% Happier                                         |           11 |
+  | FAKE_BOOK                                           |            9 |
+  | Lincoln In The Bardo                                |           20 |
+  +-----------------------------------------------------+--------------+
   ```
 
 <br>
 
 - `CONCAT` + `CHAR_LENGTH` Example
   ```sql
-  mysql> SELECT
-      ->    CONCAT(author_fname, " is ", CHAR_LENGTH(author_fname)," characters long") AS "author"
-      -> FROM books;
-  +------------------------------+
-  | author                       |
-  +------------------------------+
-  | Jhumpa is 6 characters long  |
-  | Neil is 4 characters long    |
-  | Neil is 4 characters long    |
-  | Jhumpa is 6 characters long  |
-  | Dave is 4 characters long    |
-  | Dave is 4 characters long    |
-  | Michael is 7 characters long |
-  | Patti is 5 characters long   |
-  | Dave is 4 characters long    |
-  | Neil is 4 characters long    |
-  | Raymond is 7 characters long |
-  | Raymond is 7 characters long |
-  | Don is 3 characters long     |
-  | John is 4 characters long    |
-  | David is 5 characters long   |
-  | David is 5 characters long   |
-  +------------------------------+
-  16 rows in set (0.00 sec)
+  SELECT
+  CONCAT("[", TITLE, "]",  " is ", CHAR_LENGTH(TITLE), " character length")
+  AS "Character Length"
+  FROM BOOKS;
+  +------------------------------------------------------------------------------+
+  | Character Length                                                             |
+  +------------------------------------------------------------------------------+
+  | [The Namesake] is 12 character length                                        |
+  | [Norse Mythology] is 15 character length                                     |
+  | [American Gods] is 13 character length                                       |
+  | [Interpreter of Maladies] is 23 character length                             |
+  | [A Hologram for the King: A Novel] is 32 character length                    |
+  | [The Circle] is 10 character length                                          |
+  | [The Amazing Adventures of Kavalier & Clay] is 41 character length           |
+  | [Just Kids] is 9 character length                                            |
+  | [A Heartbreaking Work of Staggering Genius] is 41 character length           |
+  | [Coraline] is 8 character length                                             |
+  | [What We Talk About When We Talk About Love: Stories] is 51 character length |
+  | [Where I'm Calling From: Selected Stories] is 40 character length            |
+  | [White Noise] is 11 character length                                         |
+  | [Cannery Row] is 11 character length                                         |
+  | [Oblivion: Stories] is 17 character length                                   |
+  | [Consider the Lobster] is 20 character length                                |
+  | [10% Happier] is 11 character length                                         |
+  | [FAKE_BOOK] is 9 character length                                            |
+  | [Lincoln In The Bardo] is 20 character length                                |
+  +------------------------------------------------------------------------------+
   ```
