@@ -5,55 +5,55 @@
   ```sql
   -- NOT USE DISTINCT
 
-  mysql> SELECT author_lname
-      -> FROM books;
-  +----------------+
-  | author_lname   |
-  +----------------+
-  | Lahiri         |
-  | Gaiman         |
-  | Gaiman         |
-  | Lahiri         |
-  | Eggers         |
-  | Eggers         |
-  | Chabon         |
-  | Smith          |
-  | Eggers         |
-  | Gaiman         |
-  | Carver         |
-  | Carver         |
-  | DeLillo        |
-  | Steinbeck      |
-  | Foster Wallace |
-  | Foster Wallace |
-  | Harris         |
-  | Harris         |
-  | Saunders       |
-  +----------------+
-  19 rows in set (0.00 sec)
+  SELECT AUTHOR_FIRST_NAME
+  FROM BOOKS;
+  +-------------------+
+  | AUTHOR_FIRST_NAME |
+  +-------------------+
+  | Jhumpa            |
+  | Neil              |
+  | Neil              |
+  | Jhumpa            |
+  | Dave              |
+  | Dave              |
+  | Michael           |
+  | Patti             |
+  | Dave              |
+  | Neil              |
+  | Raymond           |
+  | Raymond           |
+  | Don               |
+  | John              |
+  | David             |
+  | David             |
+  | Dan               |
+  | Freida            |
+  | George            |
+  +-------------------+
   ```
 
   ```sql
   -- USE DISTINCT
 
-  mysql> SELECT DISTINCT author_lname
-      -> FROM books;
-  +----------------+
-  | author_lname   |
-  +----------------+
-  | Lahiri         |
-  | Gaiman         |
-  | Eggers         |
-  | Chabon         |
-  | Smith          |
-  | Carver         |
-  | DeLillo        |
-  | Steinbeck      |
-  | Foster Wallace |
-  | Harris         |
-  | Saunders       |
-  +----------------+
-  11 rows in set (0.01 sec)
+  SELECT
+  DISTINCT AUTHOR_FIRST_NAME
+  FROM BOOKS;
+  +-------------------+
+  | AUTHOR_FIRST_NAME |
+  +-------------------+
+  | Jhumpa            |
+  | Neil              |
+  | Dave              |
+  | Michael           |
+  | Patti             |
+  | Raymond           |
+  | Don               |
+  | John              |
+  | David             |
+  | Dan               |
+  | Freida            |
+  | George            |
+  +-------------------+
   ```
 
 <br>
@@ -61,52 +61,49 @@
 - `DISTINCT`
 
   ```sql
-  mysql> SELECT
-      -> DISTINCT author_lname,
-      ->          author_fname
-      -> FROM books;
-  +----------------+--------------+
-  | author_lname   | author_fname |
-  +----------------+--------------+
-  | Lahiri         | Jhumpa       |
-  | Gaiman         | Neil         |
-  | Eggers         | Dave         |
-  | Chabon         | Michael      |
-  | Smith          | Patti        |
-  | Carver         | Raymond      |
-  | DeLillo        | Don          |
-  | Steinbeck      | John         |
-  | Foster Wallace | David        |
-  | Harris         | Dan          |
-  | Harris         | Freida       |
-  | Saunders       | George       |
-  +----------------+--------------+
-  12 rows in set (0.00 sec)
+  SELECT
+  DISTINCT AUTHOR_FIRST_NAME,
+           AUTHOR_LAST_NAME
+  FROM BOOKS;
+  +-------------------+------------------+
+  | AUTHOR_FIRST_NAME | AUTHOR_LAST_NAME |
+  +-------------------+------------------+
+  | Jhumpa            | Lahiri           |
+  | Neil              | Gaiman           |
+  | Dave              | Eggers           |
+  | Michael           | Chabon           |
+  | Patti             | Smith            |
+  | Raymond           | Carver           |
+  | Don               | DeLillo          |
+  | John              | Steinbeck        |
+  | David             | Foster Wallace   |
+  | Dan               | Harris           |
+  | Freida            | Harris           |
+  | George            | Saunders         |
+  +-------------------+------------------+
   ```
 
 <br>
 
 - `DISTINCT` + `CONCAT`
   ```sql
-  mysql> SELECT
-      -> DISTINCT
-      ->     CONCAT(author_lname, " ", author_fname) AS "author"
-      -> FROM books;
+  SELECT
+  DISTINCT CONCAT(AUTHOR_FIRST_NAME, " ", AUTHOR_LAST_NAME) AS "AUTHOR"
+  FROM BOOKS;
   +----------------------+
-  | author               |
+  | AUTHOR               |
   +----------------------+
-  | Lahiri Jhumpa        |
-  | Gaiman Neil          |
-  | Eggers Dave          |
-  | Chabon Michael       |
-  | Smith Patti          |
-  | Carver Raymond       |
-  | DeLillo Don          |
-  | Steinbeck John       |
-  | Foster Wallace David |
-  | Harris Dan           |
-  | Harris Freida        |
-  | Saunders George      |
+  | Jhumpa Lahiri        |
+  | Neil Gaiman          |
+  | Dave Eggers          |
+  | Michael Chabon       |
+  | Patti Smith          |
+  | Raymond Carver       |
+  | Don DeLillo          |
+  | John Steinbeck       |
+  | David Foster Wallace |
+  | Dan Harris           |
+  | Freida Harris        |
+  | George Saunders      |
   +----------------------+
-  12 rows in set (0.00 sec)
   ```
