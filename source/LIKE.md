@@ -5,10 +5,10 @@
   ```sql
   -- % is wild cards
 
-  mysql> SELECT title
-      -> FROM books
-      -> WHERE title
-      -> LIKE "the%";
+  SELECT TITLE
+  FROM BOOKS
+  WHERE TITLE
+  LIKE "the%";
   +-------------------------------------------+
   | title                                     |
   +-------------------------------------------+
@@ -16,17 +16,16 @@
   | The Circle                                |
   | The Amazing Adventures of Kavalier & Clay |
   +-------------------------------------------+
-  3 rows in set (0.00 sec)
   ```
 
   ```sql
-  mysql> SELECT title,
-      ->        CONCAT(author_fname, ", ", author_lname) AS "author"
-      -> FROM books
-      -> WHERE author_fname
-      -> LIKE "%da%";
+  SELECT TITLE,
+        CONCAT(AUTHOR_FIRST_NAME, ", ", AUTHOR_LAST_NAME) AS "AUTHOR"
+  FROM BOOKS
+  WHERE AUTHOR_FIRST_NAME
+  LIKE "%da%";
   +-------------------------------------------+-----------------------+
-  | title                                     | author                |
+  | TITLE                                     | AUTHOR                |
   +-------------------------------------------+-----------------------+
   | A Hologram for the King: A Novel          | Dave, Eggers          |
   | The Circle                                | Dave, Eggers          |
@@ -34,19 +33,18 @@
   | Oblivion: Stories                         | David, Foster Wallace |
   | Consider the Lobster                      | David, Foster Wallace |
   | 10% Happier                               | Dan, Harris           |
-  | fake_book                                 | Freida, Harris        |
+  | FAKE_BOOK                                 | Freida, Harris        |
   +-------------------------------------------+-----------------------+
-  7 rows in set (0.00 sec)
   ```
 
   ```sql
-  mysql> SELECT title,
-      ->        CONCAT(author_fname, ", ", author_lname) AS "author"
-      -> FROM books
-      -> WHERE author_fname
-      -> LIKE "da%";
+  SELECT TITLE,
+         CONCAT(AUTHOR_FIRST_NAME, ", ", AUTHOR_LAST_NAME) AS "AUTHOR"
+  FROM BOOKS
+  WHERE AUTHOR_FIRST_NAME
+  LIKE "da%";
   +-------------------------------------------+-----------------------+
-  | title                                     | author                |
+  | TITLE                                     | AUTHOR                |
   +-------------------------------------------+-----------------------+
   | A Hologram for the King: A Novel          | Dave, Eggers          |
   | The Circle                                | Dave, Eggers          |
@@ -55,5 +53,4 @@
   | Consider the Lobster                      | David, Foster Wallace |
   | 10% Happier                               | Dan, Harris           |
   +-------------------------------------------+-----------------------+
-  6 rows in set (0.00 sec)
   ```
