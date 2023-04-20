@@ -33,10 +33,11 @@
   +--------------------------------+
   ```
   ```sql
-  mysql> SELECT SUBSTRING(title, 1, 10)
-      -> FROM books;
+  SELECT
+  SUBSTRING(TITLE, 1, 10)
+  FROM BOOKS;
   +-------------------------+
-  | SUBSTRING(title, 1, 10) |
+  | SUBSTRING(TITLE, 1, 10) |
   +-------------------------+
   | The Namesa              |
   | Norse Myth              |
@@ -54,61 +55,71 @@
   | Cannery Ro              |
   | Oblivion:               |
   | Consider t              |
+  | 10% Happie              |
+  | FAKE_BOOK               |
+  | Lincoln In              |
   +-------------------------+
   ```
   ```sql
   -- Use AS
 
-  SELECT SUBSTRING(title, 1, 10)
-         AS "short title"
-  FROM books;
-  +-------------+
-  | short title |
-  +-------------+
-  | The Namesa  |
-  | Norse Myth  |
-  | American G  |
-  | Interprete  |
-  | A Hologram  |
-  | The Circle  |
-  | The Amazin  |
-  | Just Kids   |
-  | A Heartbre  |
-  | Coraline    |
-  | What We Ta  |
-  | Where I'm   |
-  | White Nois  |
-  | Cannery Ro  |
-  | Oblivion:   |
-  | Consider t  |
-  +-------------+
+  SELECT
+  SUBSTRING(TITLE, 1, 10) AS "TITLE: LENGTH 10"
+  FROM BOOKS;
+  +------------------+
+  | TITLE: LENGTH 10 |
+  +------------------+
+  | The Namesa       |
+  | Norse Myth       |
+  | American G       |
+  | Interprete       |
+  | A Hologram       |
+  | The Circle       |
+  | The Amazin       |
+  | Just Kids        |
+  | A Heartbre       |
+  | Coraline         |
+  | What We Ta       |
+  | Where I'm        |
+  | White Nois       |
+  | Cannery Ro       |
+  | Oblivion:        |
+  | Consider t       |
+  | 10% Happie       |
+  | FAKE_BOOK        |
+  | Lincoln In       |
+  +------------------+
   ```
 
 <br>
 
 - `CONCAT` + `SUBSTRING` Example
   ```sql
-  SELECT CONCAT(SUBSTRING(title, 1, 10), " ...")
-         AS "short title"
-  FROM books;
-  +----------------+
-  | short title    |
-  +----------------+
-  | The Namesa ... |
-  | Norse Myth ... |
-  | American G ... |
-  | Interprete ... |
-  | A Hologram ... |
-  | The Circle ... |
-  | The Amazin ... |
-  | Just Kids ...  |
-  | A Heartbre ... |
-  | Coraline ...   |
-  | What We Ta ... |
-  | Where I'm  ... |
-  | White Nois ... |
-  | Cannery Ro ... |
-  | Oblivion:  ... |
-  | Consider t ... |
-  +----------------+
+  SELECT
+  CONCAT(SUBSTRING(TITLE, 1, 10), "...")
+  AS "ELLIPSIS"
+  FROM BOOKS;
+  +---------------+
+  | ELLIPSIS      |
+  +---------------+
+  | The Namesa... |
+  | Norse Myth... |
+  | American G... |
+  | Interprete... |
+  | A Hologram... |
+  | The Circle... |
+  | The Amazin... |
+  | Just Kids...  |
+  | A Heartbre... |
+  | Coraline...   |
+  | What We Ta... |
+  | Where I'm ... |
+  | White Nois... |
+  | Cannery Ro... |
+  | Oblivion: ... |
+  | Consider t... |
+  | 10% Happie... |
+  | FAKE_BOOK...  |
+  | Lincoln In... |
+  +---------------+
   ```
