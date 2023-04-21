@@ -26,6 +26,8 @@
 | “abcd”         | “abcd”            | 4 bytes | “abcd”         | 5 bytes |
 | “abcdefg”      | “abcd”            | 4 bytes | “abcdefg”      | 5 bytes |
 
+<br>
+
 ```sql
 -- CREATE TABLE
 
