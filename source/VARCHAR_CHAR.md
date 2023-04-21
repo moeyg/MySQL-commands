@@ -29,35 +29,33 @@
 ```sql
 -- CREATE TABLE
 
-mysql> CREATE TABLE tree
-    -> (
-    ->     name CHAR(10),
-    ->     species VARCHAR(25)
-    -> );
-Query OK, 0 rows affected (0.01 sec)
-
+CREATE TABLE BEVERAGES
+(
+    NAME CHAR(25),
+    TYPE VARCHAR(25)
+);
+```
+```sql
 -- INSERT Datas
 
-mysql> INSERT INTO tree (name, species)
-    -> VALUES ("Pine", "needleleaf"),
-    ->        ("Gingko", "broad-leaved"),
-    ->        ("Zelkova", "broad-leaved"),
-    ->        ("Cypress", "needleleaf");
-Query OK, 4 rows affected (0.01 sec)
-Records: 4  Duplicates: 0  Warnings: 0
-
+INSERT INTO BEVERAGES (NAME, TYPE)
+VALUES ("CocaCola", "SOFT_DRINK"),
+       ("Sprite", "SOFT_DRINK"),
+       ("PocariSweat", "SPORTS_DRINK"),
+       ("Getorade", "SPORTS_DRINK");
+```
+```sql
 -- Result
 
-mysql> SELECT * FROM tree;
-+---------+--------------+
-| name    | species      |
-+---------+--------------+
-| Pine    | needleleaf   |
-| Gingko  | broad-leaved |
-| Zelkova | broad-leaved |
-| Cypress | needleleaf   |
-+---------+--------------+
-4 rows in set (0.01 sec)
+SELECT * FROM BEVERAGES;
++-------------+--------------+
+| NAME        | TYPE         |
++-------------+--------------+
+| CocaCola    | SOFT_DRINK   |
+| Sprite      | SOFT_DRINK   |
+| PocariSweat | SPORTS_DRINK |
+| Getorade    | SPORTS_DRINK |
++-------------+--------------+
 
 -- name은 CHAR 이므로, 10자를 채우지 못 한 공간은 공백으로 채운다.
 -- species는 VARCHAR 이므로, 25자 내에서 자유롭게 공간을 채운다.
