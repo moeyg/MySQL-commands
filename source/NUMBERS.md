@@ -92,7 +92,7 @@
   ```sql
   -- CREATE TABLE
 
-  mysql> CREATE TABLE DOUBLE_TBL(VALUE DOUBLE);
+  CREATE TABLE DOUBLE_TBL(VALUE DOUBLE);
   ```
   ```sql
   -- INSERT datas
@@ -104,7 +104,7 @@
 
   -- Result
 
-  mysql> SELECT * FROM DOUBLE_TBL;
+  SELECT * FROM DOUBLE_TBL;
   +------------+
   | VALUE      |
   +------------+
