@@ -5,30 +5,32 @@
   ```sql
   -- DAY
 
-  mysql> SELECT name, birthDATE, DAY(birthDATE)
-      -> FROM birth;
-  +--------+------------+----------------+
-  | name   | birthDATE  | DAY(birthDATE) |
-  +--------+------------+----------------+
-  | Thomas | 2020-02-02 |              2 |
-  | Ron    | 2021-07-12 |             12 |
-  | Woody  | 2022-10-10 |             10 |
-  | Drew   | 2023-04-14 |             14 |
-  +--------+------------+----------------+
-  4 rows in set (0.00 sec)
-
+  SELECT NAME, EXP, DAY(EXP)
+  FROM PRODUCT_INFO;
+  +-------------+---------------------+----------+
+  | NAME        | EXP                 | DAY(EXP) |
+  +-------------+---------------------+----------+
+  | CocaCola    | 2025-05-05 05:05:05 |        5 |
+  | Sprite      | 2025-01-31 23:00:10 |       31 |
+  | PocariSweat | 2024-12-28 01:20:28 |       28 |
+  | Pepsi       | 2026-11-28 09:09:09 |       28 |
+  | Monster     | 2023-04-21 15:11:04 |       21 |
+  +-------------+---------------------+----------+
+  ```
+  ```sql
   -- DAYNAME
 
-  mysql> SELECT name, birthDATE, DAYNAME(birthDATE) FROM birth;
-  +--------+------------+--------------------+
-  | name   | birthDATE  | DAYNAME(birthDATE) |
-  +--------+------------+--------------------+
-  | Thomas | 2020-02-02 | Sunday             |
-  | Ron    | 2021-07-12 | Monday             |
-  | Woody  | 2022-10-10 | Monday             |
-  | Drew   | 2023-04-14 | Friday             |
-  +--------+------------+--------------------+
-  4 rows in set (0.00 sec)
+  SELECT NAME, MFG_DATE, DAYNAME(MFG_DATE)
+  FROM PRODUCT_INFO;
+  +-------------+------------+-------------------+
+  | NAME        | MFG_DATE   | DAYNAME(MFG_DATE) |
+  +-------------+------------+-------------------+
+  | CocaCola    | 2023-03-03 | Friday            |
+  | Sprite      | 2023-04-24 | Monday            |
+  | PocariSweat | 2023-01-01 | Sunday            |
+  | Pepsi       | 2023-06-06 | Tuesday           |
+  | Monster     | 2023-04-21 | Friday            |
+  +-------------+------------+-------------------+
   ```
 
 <br>
@@ -38,29 +40,32 @@
   ```sql
   -- HOUR
 
-  mysql> SELECT name, birthTIME, HOUR(birthTIME) FROM birth;
-  +--------+-----------+-----------------+
-  | name   | birthTIME | HOUR(birthTIME) |
-  +--------+-----------+-----------------+
-  | Thomas | 10:00:01  |              10 |
-  | Ron    | 08:08:08  |               8 |
-  | Woody  | 22:23:24  |              22 |
-  | Drew   | 21:46:05  |              21 |
-  +--------+-----------+-----------------+
-  4 rows in set (0.00 sec)
-
+  SELECT NAME, MFG_TIME, HOUR(MFG_TIME)
+  FROM PRODUCT_INFO;
+  +-------------+----------+----------------+
+  | NAME        | MFG_TIME | HOUR(MFG_TIME) |
+  +-------------+----------+----------------+
+  | CocaCola    | 03:03:03 |              3 |
+  | Sprite      | 22:22:22 |             22 |
+  | PocariSweat | 00:00:05 |              0 |
+  | Pepsi       | 06:06:06 |              6 |
+  | Monster     | 15:11:04 |             15 |
+  +-------------+----------+----------------+
+  ```
+  ```sql
   -- MINUTE
 
-  mysql> SELECT name, birthTIME, MINUTE(birthTIME) FROM birth;
-  +--------+-----------+-------------------+
-  | name   | birthTIME | MINUTE(birthTIME) |
-  +--------+-----------+-------------------+
-  | Thomas | 10:00:01  |                 0 |
-  | Ron    | 08:08:08  |                 8 |
-  | Woody  | 22:23:24  |                23 |
-  | Drew   | 21:46:05  |                46 |
-  +--------+-----------+-------------------+
-  4 rows in set (0.00 sec)
+  SELECT NAME, MFG_TIME, MINUTE(MFG_TIME)
+  FROM PRODUCT_INFO;
+  +-------------+----------+------------------+
+  | NAME        | MFG_TIME | MINUTE(MFG_TIME) |
+  +-------------+----------+------------------+
+  | CocaCola    | 03:03:03 |                3 |
+  | Sprite      | 22:22:22 |               22 |
+  | PocariSweat | 00:00:05 |                0 |
+  | Pepsi       | 06:06:06 |                6 |
+  | Monster     | 15:11:04 |               11 |
+  +-------------+----------+------------------+
   ```
 
 <br>
@@ -70,83 +75,71 @@
   ```sql
   -- DAYNAME
 
-  mysql> SELECT name, birthDT, DAYNAME(birthDT) FROM birth;
-  +--------+---------------------+------------------+
-  | name   | birthDT             | DAYNAME(birthDT) |
-  +--------+---------------------+------------------+
-  | Thomas | 2020-02-02 10:00:01 | Sunday           |
-  | Ron    | 2021-07-12 08:08:08 | Monday           |
-  | Woody  | 2022-10-10 22:23:24 | Monday           |
-  | Drew   | 2023-04-14 21:46:05 | Friday           |
-  +--------+---------------------+------------------+
-  4 rows in set (0.00 sec)
-
+  SELECT NAME, EXP, DAYNAME(EXP)
+  FROM PRODUCT_INFO;
+  +-------------+---------------------+--------------+
+  | NAME        | EXP                 | DAYNAME(EXP) |
+  +-------------+---------------------+--------------+
+  | CocaCola    | 2025-05-05 05:05:05 | Monday       |
+  | Sprite      | 2025-01-31 23:00:10 | Friday       |
+  | PocariSweat | 2024-12-28 01:20:28 | Saturday     |
+  | Pepsi       | 2026-11-28 09:09:09 | Saturday     |
+  | Monster     | 2023-04-21 15:11:04 | Friday       |
+  +-------------+---------------------+--------------+
+  ```
+  ```sql
   -- MONTHNAME
 
-  mysql> SELECT name, birthDT, MONTHNAME(birthDT) FROM birth;
-  +--------+---------------------+--------------------+
-  | name   | birthDT             | MONTHNAME(birthDT) |
-  +--------+---------------------+--------------------+
-  | Thomas | 2020-02-02 10:00:01 | February           |
-  | Ron    | 2021-07-12 08:08:08 | July               |
-  | Woody  | 2022-10-10 22:23:24 | October            |
-  | Drew   | 2023-04-14 21:46:05 | April              |
-  +--------+---------------------+--------------------+
-  4 rows in set (0.01 sec)
-
-  -- SECOND
-
-  mysql> SELECT name, birthDT, SECOND(birthDT) FROM birth;
-  +--------+---------------------+-----------------+
-  | name   | birthDT             | SECOND(birthDT) |
-  +--------+---------------------+-----------------+
-  | Thomas | 2020-02-02 10:00:01 |               1 |
-  | Ron    | 2021-07-12 08:08:08 |               8 |
-  | Woody  | 2022-10-10 22:23:24 |              24 |
-  | Drew   | 2023-04-14 21:46:05 |               5 |
-  +--------+---------------------+-----------------+
-  4 rows in set (0.01 sec)
+  SELECT NAME, EXP, MONTHNAME(EXP) FROM PRODUCT_INFO;
+  +-------------+---------------------+----------------+
+  | NAME        | EXP                 | MONTHNAME(EXP) |
+  +-------------+---------------------+----------------+
+  | CocaCola    | 2025-05-05 05:05:05 | May            |
+  | Sprite      | 2025-01-31 23:00:10 | January        |
+  | PocariSweat | 2024-12-28 01:20:28 | December       |
+  | Pepsi       | 2026-11-28 09:09:09 | November       |
+  | Monster     | 2023-04-21 15:11:04 | April          |
+  +-------------+---------------------+----------------+
   ```
 
 <br>
 
 - `DATE_FORMAT`
   ```sql
-  mysql> SELECT name,
-      ->        DATE_FORMAT(birthDT, "%W %M %Y") AS "DATE"
-      -> FROM birth;
-  +--------+----------------------+
-  | name   | DATE                 |
-  +--------+----------------------+
-  | Thomas | Sunday February 2020 |
-  | Ron    | Monday July 2021     |
-  | Woody  | Monday October 2022  |
-  | Drew   | Friday April 2023    |
-  +--------+----------------------+
-  4 rows in set (0.00 sec)
+  SELECT NAME,
+         DATE_FORMAT(EXP, "%W %M %Y") AS "EXP: DATE FORMAT"
+  FROM PRODUCT_INFO;
+  +-------------+------------------------+
+  | NAME        | EXP: DATE FORMAT       |
+  +-------------+------------------------+
+  | CocaCola    | Monday May 2025        |
+  | Sprite      | Friday January 2025    |
+  | PocariSweat | Saturday December 2024 |
+  | Pepsi       | Saturday November 2026 |
+  | Monster     | Friday April 2023      |
+  +-------------+------------------------+
   ```
   ```sql
-  mysql> SELECT
-      -> CONCAT(name,
-      ->       " was born when ",
-      ->       DATE_FORMAT(birthDT, "%m/%d/%Y at %h:%m")) AS "birthday reminder"
-      -> FROM birth;
-  +------------------------------------------+
-  | birthday reminder                        |
-  +------------------------------------------+
-  | Thomas was born when 02/02/2020 at 10:02 |
-  | Ron was born when 07/12/2021 at 08:07    |
-  | Woody was born when 10/10/2022 at 10:10  |
-  | Drew was born when 04/14/2023 at 09:04   |
-  +------------------------------------------+
-  4 rows in set (0.00 sec)
+  SELECT
+  CONCAT("The EXP date of thie ", NAME, ": ", DATE_FORMAT(EXP, "%m/%d/%Y at %h:%m"))
+  AS "PRODUCT EXP INFO"
+  FROM PRODUCT_INFO;
+  +-------------------------------------------------------+
+  | PRODUCT EXP INFO                                      |
+  +-------------------------------------------------------+
+  | The EXP date of thie CocaCola: 05/05/2025 at 05:05    |
+  | The EXP date of thie Sprite: 01/31/2025 at 11:01      |
+  | The EXP date of thie PocariSweat: 12/28/2024 at 01:12 |
+  | The EXP date of thie Pepsi: 11/28/2026 at 09:11       |
+  | The EXP date of thie Monster: 04/21/2023 at 03:04     |
+  +-------------------------------------------------------+
   ```
   ```sql
-  mysql> SELECT DATE_FORMAT(NOW(), "%M %D at %h:%i");
-  +--------------------------------------+
-  | DATE_FORMAT(NOW(), "%M %D at %h:%i") |
-  +--------------------------------------+
-  | April 15th at 12:14                  |
-  +--------------------------------------+
-  1 row in set (0.00 sec)
+  SELECT DATE_FORMAT(NOW(), "%M %D at %h:%i")
+  AS "TODAY IS ...";
+  +---------------------+
+  | TODAY IS ...        |
+  +---------------------+
+  | April 21st at 03:22 |
+  +---------------------+
   ```
