@@ -7,20 +7,20 @@
   ```sql
   -- INSERT datas
 
-  mysql> INSERT INTO birth(name, birthDATE, birthTIME, birthDT)
-      -> VALUES ("Drew", CURDATE(), CURTIME(), NOW());
-  Query OK, 1 row affected (0.00 sec)
-
+  INSERT INTO PRODUCT_INFO (NAME, PRODUCTION_DATE, PRODUCTION_TIME, EXPIRATION_DT)
+  VALUES ("Monster", CURDATE(), CURTIME(), NOW());
+  ```
+  ```sql
   -- Result
 
-  mysql> SELECT * FROM birth;
-  +--------+------------+-----------+---------------------+
-  | name   | birthDATE  | birthTIME | birthDT             |
-  +--------+------------+-----------+---------------------+
-  | Thomas | 2020-02-02 | 10:00:01  | 2020-02-02 10:00:01 |
-  | Ron    | 2021-07-12 | 08:08:08  | 2021-07-12 08:08:08 |
-  | Woody  | 2022-10-10 | 22:23:24  | 2022-10-10 22:23:24 |
-  | Drew   | 2023-04-14 | 21:46:05  | 2023-04-14 21:46:05 |
-  +--------+------------+-----------+---------------------+
-  4 rows in set (0.00 sec)
+  SELECT * FROM PRODUCT_INFO;
+  +-------------+-----------------+-----------------+---------------------+
+  | NAME        | PRODUCTION_DATE | PRODUCTION_TIME | EXPIRATION_DT       |
+  +-------------+-----------------+-----------------+---------------------+
+  | CocaCola    | 2023-03-03      | 03:03:03        | 2025-05-05 05:05:05 |
+  | Sprite      | 2023-04-24      | 22:22:22        | 2025-01-31 23:00:10 |
+  | PocariSweat | 2023-01-01      | 00:00:05        | 2024-12-28 01:20:28 |
+  | Pepsi       | 2023-06-06      | 06:06:06        | 2026-11-28 09:09:09 |
+  | Monster     | 2023-04-21      | 15:01:47        | 2023-04-21 15:01:47 |
+  +-------------+-----------------+-----------------+---------------------+
   ```
