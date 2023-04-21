@@ -19,32 +19,31 @@
   ```sql
   -- CREATE TABLE : 총 길이가 7이고, 소수점 아래 숫자는 2자리
 
-  mysql> CREATE TABLE items (price DECIMAL(7, 2));
-  Query OK, 0 rows affected (0.01 sec)
-
+  CREATE TABLE DECIMAL_TBL (VALUE DECIMAL(7, 2));
+  ```
+  ```sql
   -- INSERT datas
 
-  mysql> INSERT INTO items (price)
-      -> VALUE (7),
-      ->       (40325),
-      ->       (22.44),
-      ->       (12345.999),
-      ->       (1.88888888);
-  Query OK, 5 row affected (0.00 sec)
-
+  INSERT INTO DECIMAL_TBL (VALUES)
+  VALUES (1.99),
+         (449.4),
+         (22.44),
+         (12345.999),
+         (1.99999999);
+  ```
+  ```sql
   -- Result
 
-  mysql> SELECT * FROM items;
+  SELECT * FROM BEVERAGES;
   +----------+
-  | price    |
+  | VALUES   |
   +----------+
-  |     7.00 |
-  | 40325.00 |
+  |     1.99 |
+  |   449.40 |
   |    22.44 |
   | 12346.00 |  -- 소수점 아래의 자리수를 초과하게 되면 반올림
-  |     1.89 |  -- 소수점 아래의 자리수를 초과하게 되면 반올림
+  |     2.00 |  -- 소수점 아래의 자리수를 초과하게 되면 반올림
   +----------+
-  5 rows in set (0.00 sec)
   ```
 
   <br>
@@ -59,29 +58,27 @@
   ```sql
   -- CREATE TABLE
 
-  mysql> CREATE TABLE floatTBL(val FLOAT);
-  Query OK, 0 rows affected (0.01 sec)
-
+  CREATE TABLE FLOAT_TBL(VALUE FLOAT);
+  ```
+  ```sql
   -- INSERT datas
 
-  mysql> INSERT INTO floatTBL (val)
-      -> VALUES (88.45),
-      ->        (77.7777777),
-      ->        (10.0000001);
-  Query OK, 3 rows affected (0.00 sec)
-  Records: 3  Duplicates: 0  Warnings: 0
-
+  INSERT INTO FLOAT_TBL (VALUE)
+  VALUES (88.45),
+         (77.7777777),
+         (10.0000001);
+  ```
+  ```sql
   -- Result
 
-  mysql> SELECT * FROM floatTBL;
+  SELECT * FROM FLOAT_TBL;
   +---------+
-  | val     |
+  | VALUE   |
   +---------+
   |   88.45 |
   | 77.7778 |  -- 정밀도가 떨어지는 것을 확인할 수 있다.
   |      10 |  -- 정밀도가 떨어지는 것을 확인할 수 있다.
   +---------+
-  3 rows in set (0.00 sec)
   ```
 
   <br>
@@ -95,27 +92,24 @@
   ```sql
   -- CREATE TABLE
 
-  mysql> CREATE TABLE doubleTBL(val DOUBLE);
-  Query OK, 0 rows affected (0.00 sec)
-
+  mysql> CREATE TABLE DOUBLE_TBL(VALUE DOUBLE);
+  ```
+  ```sql
   -- INSERT datas
 
-  mysql> INSERT INTO doubleTBL (val)
-      -> VALUES (88.45),
-      ->        (77.7777777),
-      ->        (10.0000001);
-  Query OK, 3 rows affected (0.00 sec)
-  Records: 3  Duplicates: 0  Warnings: 0
+  INSERT INTO DOUBLE_TBL (VALUE)
+  VALUES (88.45),
+         (77.7777777),
+         (10.0000001);
 
   -- Result
 
-  mysql> SELECT * FROM doubleTBL;
+  mysql> SELECT * FROM DOUBLE_TBL;
   +------------+
-  | val        |
+  | VALUE      |
   +------------+
   |      88.45 |
   | 77.7777777 |  -- FLOAT 보다는 정밀도가 뛰어나다.
   | 10.0000001 |  -- FLOAT 보다는 정밀도가 뛰어나다.
   +------------+
-  3 rows in set (0.01 sec)
   ```
