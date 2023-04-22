@@ -10,35 +10,34 @@
   ```sql
   -- CREATE TABLE
 
-  mysql> CREATE TABLE comments
-      -> (
-      ->     content VARCHAR(100),
-      ->     created_at TIMESTAMP DEFAULT NOW()
-      -> );
-  Query OK, 0 rows affected (0.00 sec)
-
+  CREATE TABLE COMMENTS
+  (
+        CONTENTS VARCHAR(255),
+        CREATED_AT TIMESTAMP DEFAULT NOW()
+   );
+  ```
+  ```sql
   -- INSERT datas
 
-  mysql> INSERT INTO comments (content) VALUES ("Hello, World!");
-  Query OK, 1 row affected (0.01 sec)
+  INSERT INTO COMMENTS (CONTENTS) VALUES ("Hello, World!");
 
-  mysql> INSERT INTO comments (content) VALUES ("Hello, MySQL!");
-  Query OK, 1 row affected (0.00 sec)
+  INSERT INTO COMMENTS (CONTENTS) VALUES ("Hello, DataBase!");
 
-  mysql> INSERT INTO comments (content) VALUES ("Hello, DATABASE!");
-  Query OK, 1 row affected (0.00 sec)
-
+  INSERT INTO COMMENTS (CONTENTS) VALUES ("Hello, MySQL!");
+  ```
+  ```sql
   -- Result
 
-  mysql> SELECT * FROM comments ORDER BY created_at DESC;
+  SELECT *
+  FROM COMMENTS
+  ORDER BY CREATED_AT DESC;
   +------------------+---------------------+
-  | content          | created_at          |
+  | CONTENTS         | CREATED_AT          |
   +------------------+---------------------+
-  | Hello, DATABASE! | 2023-04-14 22:23:21 |
-  | Hello, MySQL!    | 2023-04-14 22:23:11 |
-  | Hello, World!    | 2023-04-14 22:22:55 |
+  | Hello, MySQL!    | 2023-04-22 23:04:32 |
+  | Hello, DataBase! | 2023-04-22 23:03:56 |
+  | Hello, World!    | 2023-04-22 23:03:31 |
   +------------------+---------------------+
-  3 rows in set (0.00 sec)
   ```
 
 <br>
@@ -48,67 +47,59 @@
   ```sql
   -- CREATE TABLE
 
-  mysql> CREATE TABLE comments
-      -> (
-      ->      content VARCHAR(100),
-      ->      updated_at TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
-      -> );
-  Query OK, 0 rows affected (0.02 sec)
-
+  CREATE TABLE COMMENTS
+  (
+      CONTENTS VARCHAR(255),
+      UPDATED_AT TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
+  );
+  ```
+  ```sql
   -- INSERT datas
 
-  mysql> INSERT INTO comments (content) VALUES ("Hello, World!");
-  Query OK, 1 row affected (0.01 sec)
+  INSERT INTO COMMENTS (CONTENTS) VALUES ("Hello, World!");
 
-  mysql> INSERT INTO comments (content) VALUES ("Hello, MySQL!");
-  Query OK, 1 row affected (0.00 sec)
+  INSERT INTO COMMENTS (CONTENTS) VALUES ("Hello, DataBase!");
 
-  mysql> INSERT INTO comments (content) VALUES ("Hello, DATABASE!");
-  Query OK, 1 row affected (0.00 sec)
-
+  INSERT INTO COMMENTS (CONTENTS) VALUES ("Hello, MySQL!");
+  ```
+  ```sql
   -- Result
 
-  mysql> SELECT * FROM comments;
+  SELECT * FROM COMMENTS;
   +------------------+---------------------+
-  | content          | updated_at          |
+  | CONTENTS         | UPDATED_AT          |
+  +------------------+---------------------+  
+  | Hello, World!    | 2023-04-22 23:08:02 |
+  | Hello, DataBase! | 2023-04-22 23:08:27 |
+  | Hello, MySQL!    | 2023-04-22 23:08:34 |
   +------------------+---------------------+
-  | Hello, World!    | 2023-04-14 22:46:51 |
-  | Hello, MySQL!    | 2023-04-14 22:47:07 |
-  | Hello, DATABASE! | 2023-04-14 22:47:16 |
-  +------------------+---------------------+
-  3 rows in set (0.00 sec)
   ```
-
   ```sql
   -- Update content
 
-  mysql> UPDATE comments
-      -> SET content="Hello, DATABASE :)"
-      -> WHERE content="Hello, DATABASE!";
-  Query OK, 1 row affected (0.00 sec)
-  Rows matched: 1  Changed: 1  Warnings: 0
+  UPDATE COMMENTS
+  SET CONTENTS="Hello, World :)"
+  WHERE CONTENTS="Hello, World!";
 
-  mysql> UPDATE comments
-      -> SET content="Hello, World :)"
-      -> WHERE content="Hello, World!";
-  Query OK, 0 rows affected (0.00 sec)
-  Rows matched: 1  Changed: 0  Warnings: 0
+  UPDATE COMMENTS
+  SET CONTENTS="Hello, DataBase :)"
+  WHERE CONTENTS="Hello, DataBase!";
 
-  mysql> UPDATE comments
-      -> SET content="Hello, MySQL :)"
-      -> WHERE content="Hello, MySQL!";
-  Query OK, 1 row affected (0.00 sec)
-  Rows matched: 1  Changed: 1  Warnings: 0
-
+  UPDATE COMMENTS
+  SET CONTENTS="Hello, MySQL :)"
+  WHERE CONTENTS="Hello, MySQL!";
+  ```
+  ```sql
   -- Result
 
-  mysql> SELECT * FROM comments ORDER BY updated_at DESC;
+  SELECT *
+  FROM COMMENTS
+  ORDER BY UPDATED_AT DESC;
   +--------------------+---------------------+
-  | content            | updated_at          |
+  | CONTENTS           | UPDATED_AT          |
   +--------------------+---------------------+
-  | Hello, MySQL :)    | 2023-04-14 22:53:20 |  -- 내용이 업데이트된 시간이 반영
-  | Hello, DATABASE :) | 2023-04-14 22:51:21 |
-  | Hello, World :)    | 2023-04-14 22:47:48 |
+  | Hello, MySQL :)    | 2023-04-22 23:11:35 |  -- 업데이트 된 시간 반영
+  | Hello, DataBase :) | 2023-04-22 23:10:56 |
+  | Hello, World :)    | 2023-04-22 23:10:07 |
   +--------------------+---------------------+
-  3 rows in set (0.00 sec)
   ```
