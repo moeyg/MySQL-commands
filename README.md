@@ -54,5 +54,5 @@
 • [DATE & TIME & DATETIME](https://github.com/moeyg/MySQL/blob/main/source/DATE_TIME_DATETIME.md)<br>
 　 ref. [CURDATE & CURTIME & NOW](https://github.com/moeyg/MySQL/blob/main/source/CURDATE_CURTIME_NOW.md)<br>
 　 ref. [DATE_FORMAT](https://github.com/moeyg/MySQL/blob/main/source/DATE_FORMAT.md)<br>
-　 ref. [DATE MATH : DATEDIFF, ADD, SUB](https://github.com/moeyg/MySQL/blob/main/source/DATE_MATH.md)<br>
+　 ref. [DATE MATH : DATEDIFF, ADD, SUB, INTERVAL](https://github.com/moeyg/MySQL/blob/main/source/DATE_MATH.md)<br>
 　 ref. [TIMESTAMP](https://github.com/moeyg/MySQL/blob/main/source/TIMESTAMP.md)<br>
