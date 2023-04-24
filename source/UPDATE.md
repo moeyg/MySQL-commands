@@ -6,9 +6,10 @@
   -- UPDATE column contents
 
   UPDATE BEVERAGES
-  SET PRICE=2500
-  WHERE NAME="Monster";
+  SET PRICE = 2500
+  WHERE NAME = "Monster";
   ```
+
   ```sql
   -- Result
 
@@ -23,13 +24,15 @@
   |       5 | Monster     |  2500 | ENERGY_DRINK |  -- UPDATE PRICE 2000 → 2500
   +---------+-------------+-------+--------------+
   ```
+
   ```sql
   -- UPDATE two crops type value
 
   UPDATE BEVERAGES
-  SET PRICE=1900
-  WHERE TYPE="SOFT_DRINK";
+  SET PRICE = 1900
+  WHERE TYPE = "SOFT_DRINK";
   ```
+
   ```sql
   -- Result
 

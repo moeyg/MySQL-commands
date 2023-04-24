@@ -7,8 +7,9 @@
 
   DELETE
   FROM BEVERAGES
-  WHERE NAME="Pepsi";
+  WHERE NAME = "Pepsi";
   ```
+
   ```sql
   -- Result
 
@@ -21,16 +22,18 @@
   |       4 | PocariSweat |  2200 | SPORTS_DRINK |
   |       5 | Monster     |  2500 | ENERGY_DRINK |
   +---------+-------------+-------+--------------+
-  
+
   -- ❗️ NOT CHANGED BARCODE value
   ```
+
   ```sql
   -- DELETE
 
   DELETE
   FROM BEVERAGES
-  WHERE PRICE=2200;
+  WHERE PRICE = 2200;
   ```
+
   ```sql
   -- Result
 
@@ -53,6 +56,7 @@
 
   DELETE FROM BEVERAGES;
   ```
+
   ```sql
   -- Result : DELETE is keeps the table
 
@@ -63,11 +67,13 @@
   | BEVERAGES                 |
   +---------------------------+
   ```
+
   ```sql
   -- ❗️ DROP TABLE
 
   DROP TABLE BEVERAGES;
   ```
+
   ```sql
   -- Result
 

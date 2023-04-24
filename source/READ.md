@@ -52,7 +52,7 @@
   ```sql
   SELECT *
   FROM BEVERAGES
-  WHERE PRICE=2000;
+  WHERE PRICE = 2000;
   +---------+----------+-------+--------------+
   | BARCODE | NAME     | PRICE | TYPE         |
   +---------+----------+-------+--------------+
@@ -64,7 +64,7 @@
   ```sql
   SELECT NAME, PRICE
   FROM BEVERAGES
-  WHERE TYPE="SOFT_DRINK";
+  WHERE TYPE = "SOFT_DRINK";
   +----------+-------+
   | NAME     | PRICE |
   +----------+-------+
@@ -94,4 +94,3 @@
   | Monster     | ENERGY_DRINK |
   +-------------+--------------+
   ```
-  

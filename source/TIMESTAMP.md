@@ -16,6 +16,7 @@
         CREATED_AT TIMESTAMP DEFAULT NOW()
    );
   ```
+
   ```sql
   -- INSERT datas
 
@@ -25,6 +26,7 @@
 
   INSERT INTO COMMENTS (CONTENTS) VALUES ("Hello, MySQL!");
   ```
+
   ```sql
   -- Result
 
@@ -53,6 +55,7 @@
       UPDATED_AT TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
   );
   ```
+
   ```sql
   -- INSERT datas
 
@@ -62,33 +65,36 @@
 
   INSERT INTO COMMENTS (CONTENTS) VALUES ("Hello, MySQL!");
   ```
+
   ```sql
   -- Result
 
   SELECT * FROM COMMENTS;
   +------------------+---------------------+
   | CONTENTS         | UPDATED_AT          |
-  +------------------+---------------------+  
+  +------------------+---------------------+
   | Hello, World!    | 2023-04-22 23:08:02 |
   | Hello, DataBase! | 2023-04-22 23:08:27 |
   | Hello, MySQL!    | 2023-04-22 23:08:34 |
   +------------------+---------------------+
   ```
+
   ```sql
   -- Update content
 
   UPDATE COMMENTS
-  SET CONTENTS="Hello, World :)"
-  WHERE CONTENTS="Hello, World!";
+  SET CONTENTS = "Hello, World :)"
+  WHERE CONTENTS = "Hello, World!";
 
   UPDATE COMMENTS
-  SET CONTENTS="Hello, DataBase :)"
-  WHERE CONTENTS="Hello, DataBase!";
+  SET CONTENTS = "Hello, DataBase :)"
+  WHERE CONTENTS = "Hello, DataBase!";
 
   UPDATE COMMENTS
-  SET CONTENTS="Hello, MySQL :)"
-  WHERE CONTENTS="Hello, MySQL!";
+  SET CONTENTS = "Hello, MySQL :)"
+  WHERE CONTENTS = "Hello, MySQL!";
   ```
+
   ```sql
   -- Result
 
